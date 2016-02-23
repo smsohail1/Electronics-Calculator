@@ -63,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
         typeface = Typeface.createFromAsset(getAssets(), "fonts/AvenirLTStd-Medium.otf");
         header_app.setTypeface(typeface);
         Listview_Selection.put(0, ResistorColorCode.class);
-
+        Listview_Selection.put(1, SMDresisitorcode.class);
 
 
         Listview_Selection.put(2, IndicatorColorCode.class);
