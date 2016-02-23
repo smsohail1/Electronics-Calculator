@@ -45,11 +45,21 @@ public class ResisitorSMDformat {
             // value   =  format.format(SMDresisitorcode.combine_first_second);
             //  dd=  String.format("%2.0f", SMDresisitorcode.combine_first_second);
             //SMDresisitorcode.smd_calculated_value.setText(value);
-            if(SMDresisitorcode.text.charAt(0)=='0')
+            if(SMDresisitorcode.text.charAt(0)=='0' && SMDresisitorcode.text.charAt(1)=='0')
+            {
+                SMDresisitorcode.smd_calculated_value.setText("0 Ω");
+
+            }
+           else if(SMDresisitorcode.text.charAt(0)=='0')
             {
                 SMDresisitorcode.smd_calculated_value.append(value.charAt(0) + "");
                 SMDresisitorcode.smd_calculated_value.append(value.charAt(1) +"");
-                SMDresisitorcode.smd_calculated_value.append(value.charAt(2)+ " Ω");
+                SMDresisitorcode.smd_calculated_value.append(value.charAt(2) + " Ω");
+
+            }
+            else if(SMDresisitorcode.text.charAt(1)=='0')
+            {
+                SMDresisitorcode.smd_calculated_value.setText(value.charAt(0) + " kΩ");
 
             }
 else
@@ -57,14 +67,20 @@ else
                // SMDresisitorcode.smd_calculated_value.setText(value.charAt(0) + "." + value.charAt(1) + " kΩ");
 
                 SMDresisitorcode.smd_calculated_value.append(value.charAt(0) + "");
-                SMDresisitorcode.smd_calculated_value.append( + value.charAt(1)+"");
+                SMDresisitorcode.smd_calculated_value.append( value.charAt(1)+"");
                 SMDresisitorcode.smd_calculated_value.append(" kΩ");
             }
         } else if (SMDresisitorcode.third_format_value.equalsIgnoreCase("3")) {
 
             value = SMDresisitorcode.calculated_value;
             // value = String.valueOf(SMDresisitorcode.combine_first_second);
-            if(SMDresisitorcode.text.charAt(0)=='0')
+            if(SMDresisitorcode.text.charAt(0)=='0' && SMDresisitorcode.text.charAt(1)=='0')
+            {
+                SMDresisitorcode.smd_calculated_value.setText("0 Ω");
+
+            }
+
+          else  if(SMDresisitorcode.text.charAt(0)=='0')
             {
                 SMDresisitorcode.smd_calculated_value.setText(value.charAt(0) + " kΩ");
             }
@@ -77,7 +93,13 @@ else
             value = SMDresisitorcode.calculated_value;
             // value = String.valueOf(SMDresisitorcode.combine_first_second);
 
-            if (SMDresisitorcode.text.charAt(0) == '0') {
+            if(SMDresisitorcode.text.charAt(0)=='0' && SMDresisitorcode.text.charAt(1)=='0')
+            {
+                SMDresisitorcode.smd_calculated_value.setText("0 Ω");
+
+            }
+
+           else if (SMDresisitorcode.text.charAt(0) == '0') {
                 SMDresisitorcode.smd_calculated_value.setText(value.charAt(0) + "" + value.charAt(1) + " kΩ");
             } else {
                 SMDresisitorcode.smd_calculated_value.setText(value.charAt(0) + "" + value.charAt(1) + "0" + " kΩ");
@@ -85,7 +107,13 @@ else
         }else if (SMDresisitorcode.third_format_value.equalsIgnoreCase("5")) {
             // value = String.valueOf(SMDresisitorcode.combine_first_second);
             value = SMDresisitorcode.calculated_value;
-            if(SMDresisitorcode.text.charAt(0) == '0') {
+            if(SMDresisitorcode.text.charAt(0)=='0' && SMDresisitorcode.text.charAt(1)=='0')
+            {
+                SMDresisitorcode.smd_calculated_value.setText("0 Ω");
+
+            }
+
+           else if(SMDresisitorcode.text.charAt(0) == '0') {
 
                 SMDresisitorcode.smd_calculated_value.append(value.charAt(0) + "");
                 SMDresisitorcode.smd_calculated_value.append(value.charAt(1)+"");
@@ -107,7 +135,12 @@ else
 
             //value = String.valueOf(SMDresisitorcode.combine_first_second);
             value = SMDresisitorcode.calculated_value;
-            if(SMDresisitorcode.text.charAt(0) == '0') {
+            if(SMDresisitorcode.text.charAt(0)=='0' && SMDresisitorcode.text.charAt(1)=='0')
+            {
+                SMDresisitorcode.smd_calculated_value.setText("0 Ω");
+
+            }
+           else if(SMDresisitorcode.text.charAt(0) == '0') {
                 SMDresisitorcode.smd_calculated_value.setText(value.charAt(0) + " MΩ");
             }
             else
@@ -119,7 +152,12 @@ else
 
             //value = String.valueOf(SMDresisitorcode.combine_first_second);
             value = SMDresisitorcode.calculated_value;
-            if(SMDresisitorcode.text.charAt(0) == '0') {
+            if(SMDresisitorcode.text.charAt(0)=='0' && SMDresisitorcode.text.charAt(1)=='0')
+            {
+                SMDresisitorcode.smd_calculated_value.setText("0 Ω");
+
+            }
+            else if(SMDresisitorcode.text.charAt(0) == '0') {
                 SMDresisitorcode.smd_calculated_value.setText(value.charAt(0) + "" + value.charAt(1) + "" + " MΩ");
             }
             else
@@ -131,7 +169,13 @@ else
 
             // value = String.valueOf(SMDresisitorcode.combine_first_second);
             value = SMDresisitorcode.calculated_value;
-            if(SMDresisitorcode.text.charAt(0) == '0') {
+
+            if(SMDresisitorcode.text.charAt(0)=='0' && SMDresisitorcode.text.charAt(1)=='0')
+            {
+                SMDresisitorcode.smd_calculated_value.setText("0 Ω");
+
+            }
+           else if(SMDresisitorcode.text.charAt(0) == '0') {
                // SMDresisitorcode.smd_calculated_value.setText(value.charAt(0) + value.charAt(1)   + value.charAt(2)+" MΩ");
                 SMDresisitorcode.smd_calculated_value.append(value.charAt(0) +"");
                 SMDresisitorcode.smd_calculated_value.append(value.charAt(1)+"");
@@ -153,7 +197,12 @@ else
 
             //  value = String.valueOf(SMDresisitorcode.combine_first_second);
             value = SMDresisitorcode.calculated_value;
-            if(SMDresisitorcode.text.charAt(0) == '0'){
+            if(SMDresisitorcode.text.charAt(0)=='0' && SMDresisitorcode.text.charAt(1)=='0')
+            {
+                SMDresisitorcode.smd_calculated_value.setText("0 Ω");
+
+            }
+           else if(SMDresisitorcode.text.charAt(0) == '0'){
                 SMDresisitorcode.smd_calculated_value.setText(value.charAt(0) + " GΩ");
 
             }
