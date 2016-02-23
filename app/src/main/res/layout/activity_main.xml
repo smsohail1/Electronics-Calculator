@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/header"
+
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/header_bg"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/app_header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Electrodroid"
+            android:textColor="#ffffff"
+            android:textSize="25sp" />
+
+    </RelativeLayout>
+
+    <ListView
+        android:layout_above="@+id/adLayout"
+        android:id="@+id/list_calculator"
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/header"
+        android:layout_gravity="left|top"
+        android:background="@drawable/bg"
+        android:choiceMode="singleChoice"
+
+        android:dividerHeight="0.5dp" />
+
+    <LinearLayout
+        android:id="@+id/adLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:visibility="gone"></LinearLayout>
+
+
+</RelativeLayout>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="list_background">#ffffff</color>
+    <color name="counter_text_bg">#a1a1a1</color>
+    <color name="list_background_pressed">#a1a1a1</color>
+    <color name="counter_text_color">#a1a1a1</color>
+    <color name="list_item_bg_presseu">#090999</color>
+    <color name="list_backgrou">#111199</color>
+    <color name="list_background_presse">#454545</color>
+</resources>

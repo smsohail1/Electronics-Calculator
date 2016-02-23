@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <LinearLayout
+        android:id="@+id/header1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/header_bg"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Resistor series/parallel"
+            android:textColor="#ffffff"
+            android:textSize="25sp" />
+    </LinearLayout>
+
+    <RelativeLayout
+
+        android:layout_centerInParent="true"
+        android:layout_width="fill_parent"
+
+        android:layout_height="wrap_content"
+
+        >
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="10dp">
+
+            <!--<ImageView-->
+
+                <!--android:id="@+id/series_img"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:src="@drawable/ic_launcher" />-->
+
+            <Button
+                android:id="@+id/R1_serial"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="3.6" />
+
+
+            <Button
+                android:id="@+id/R2_serial"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/R1_serial"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:text="3.9" />
+
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/R2_serial"
+                android:layout_centerInParent="true">
+
+                <TextView
+                    android:id="@+id/total"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Total:" />
+
+                <TextView
+                    android:id="@+id/series_total"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_toRightOf="@+id/total"
+                    android:text="7.5" />
+            </RelativeLayout>
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp">
+
+
+            <Button
+                android:id="@+id/R1_parallel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+
+                android:text="3.6" />
+
+            <!--<ImageView-->
+                <!--android:id="@+id/parallel_img"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_below="@+id/R1_parallel"-->
+                <!--android:layout_centerHorizontal="true"-->
+                <!--android:src="@drawable/ic_launcher" />-->
+
+            <Button
+                android:id="@+id/R2_parallel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/R1_parallel"
+
+
+                android:text="3.9" />
+
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/R2_parallel"
+                android:layout_centerInParent="true">
+
+                <TextView
+                    android:id="@+id/total_parallel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Total:" />
+
+                <TextView
+                    android:id="@+id/parallel_total"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/total_parallel"
+                    android:text="7.5Ω" />
+            </RelativeLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:id="@+id/adLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:visibility="gone"></LinearLayout>
+</RelativeLayout>
