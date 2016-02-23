@@ -25,20 +25,51 @@ public class Formatfourband {
             value = SMDresisitorcode.calculated_value;
             // value = String.valueOf(SMDresisitorcode.combine_first_second);
             // SMDresisitorcode.smd_calculated_value.setText(String.valueOf(SMDresisitorcode.combine_first_second));
-            SMDresisitorcode.smd_calculated_value.setText(value.charAt(0) + "." +value.charAt(1)+value.charAt(2) + "  kΩ");
+            if(SMDresisitorcode.text.charAt(0)=='0' && SMDresisitorcode.text.charAt(1)=='0' && SMDresisitorcode.text.charAt(2)=='0')
+            {
+                SMDresisitorcode.smd_calculated_value.setText("0 Ω");
 
+            }
+           else if(SMDresisitorcode.text.charAt(0)=='0')
+            {
+                SMDresisitorcode.smd_calculated_value.append(value.charAt(0) + "");
+                SMDresisitorcode.smd_calculated_value.append(value.charAt(1) +"");
+                SMDresisitorcode.smd_calculated_value.append(value.charAt(2) + "");
+                SMDresisitorcode.smd_calculated_value.append(" Ω");
+            }
+            else {
+                SMDresisitorcode.smd_calculated_value.append(value.charAt(0) +"");
+                SMDresisitorcode.smd_calculated_value.append(".");
+                SMDresisitorcode.smd_calculated_value.append(""+value.charAt(1) +"");
+                SMDresisitorcode.smd_calculated_value.append(value.charAt(2) + "");
+                SMDresisitorcode.smd_calculated_value.append(" kΩ");
+            }
 
         } else if (SMDresisitorcode.third_format_value.equalsIgnoreCase("2")) {
 
             //format=new DecimalFormat("##.##");
             //value = String.valueOf(SMDresisitorcode.combine_first_second);
             value = SMDresisitorcode.calculated_value;
-            SMDresisitorcode.smd_calculated_value.append(value.charAt(0)+"");
-            SMDresisitorcode.smd_calculated_value.append(value.charAt(1)+"");
-            SMDresisitorcode.smd_calculated_value.append(".");
-            SMDresisitorcode.smd_calculated_value.append(""+value.charAt(2)+"");
-            SMDresisitorcode.smd_calculated_value.append(" kΩ");
-         //   SMDresisitorcode.smd_calculated_value.setText(value.charAt(0)  + value.charAt(1)+   value.charAt(2)+"ss Ω");
+            if(SMDresisitorcode.text.charAt(0)=='0' && SMDresisitorcode.text.charAt(1)=='0' && SMDresisitorcode.text.charAt(2)=='0')
+            {
+                SMDresisitorcode.smd_calculated_value.setText("0 Ω");
+
+            }
+            else if(SMDresisitorcode.text.charAt(0)=='0')
+            {
+                SMDresisitorcode.smd_calculated_value.append(value.charAt(0) + "");
+                SMDresisitorcode.smd_calculated_value.append("."+"");
+                SMDresisitorcode.smd_calculated_value.append(value.charAt(1) + "");
+                SMDresisitorcode.smd_calculated_value.append(" kΩ");
+            }
+
+            else {
+                SMDresisitorcode.smd_calculated_value.append(value.charAt(0) + "");
+                SMDresisitorcode.smd_calculated_value.append(value.charAt(1) + "");
+                SMDresisitorcode.smd_calculated_value.append(".");
+                SMDresisitorcode.smd_calculated_value.append("" + value.charAt(2) + "");
+                SMDresisitorcode.smd_calculated_value.append(" kΩ");
+            } //   SMDresisitorcode.smd_calculated_value.setText(value.charAt(0)  + value.charAt(1)+   value.charAt(2)+"ss Ω");
 
 //double d=Double.valueOf(value);
            // format_txt=new DecimalFormat("0.0");
@@ -53,30 +84,75 @@ public class Formatfourband {
 
             value = SMDresisitorcode.calculated_value;
             // value = String.valueOf(SMDresisitorcode.combine_first_second);
-            SMDresisitorcode.smd_calculated_value.append(value.charAt(0)+"");
-            SMDresisitorcode.smd_calculated_value.append(value.charAt(1)+"");
-            SMDresisitorcode.smd_calculated_value.append(""+value.charAt(2)+"");
-            SMDresisitorcode.smd_calculated_value.append(" kΩ");
+            if(SMDresisitorcode.text.charAt(0)=='0' && SMDresisitorcode.text.charAt(1)=='0' && SMDresisitorcode.text.charAt(2)=='0')
+            {
+                SMDresisitorcode.smd_calculated_value.setText("0 Ω");
 
+            }
+            else if(SMDresisitorcode.text.charAt(0)=='0')
+            {
+                SMDresisitorcode.smd_calculated_value.append(value.charAt(0) + "");
+                SMDresisitorcode.smd_calculated_value.append(value.charAt(1) + "");
+                SMDresisitorcode.smd_calculated_value.append(" kΩ");
+
+
+            }
+
+            else {
+                SMDresisitorcode.smd_calculated_value.append(value.charAt(0) + "");
+                SMDresisitorcode.smd_calculated_value.append(value.charAt(1) + "");
+                SMDresisitorcode.smd_calculated_value.append("" + value.charAt(2) + "");
+                SMDresisitorcode.smd_calculated_value.append(" kΩ");
+            }
          //   SMDresisitorcode.smd_calculated_value.setText(value.charAt(0)  + value.charAt(1) +value.charAt(2)+ " kΩ");
 
 
         } else if (SMDresisitorcode.third_format_value.equalsIgnoreCase("4")) {
             value = SMDresisitorcode.calculated_value;
             // value = String.valueOf(SMDresisitorcode.combine_first_second);
+            if(SMDresisitorcode.text.charAt(0)=='0' && SMDresisitorcode.text.charAt(1)=='0' && SMDresisitorcode.text.charAt(2)=='0')
+            {
+                SMDresisitorcode.smd_calculated_value.setText("0 Ω");
 
-            SMDresisitorcode.smd_calculated_value.setText(value.charAt(0) + "." + value.charAt(1) + value.charAt(2) + " MΩ");
+            }
+            else if(SMDresisitorcode.text.charAt(0)=='0')
+            {
+
+                SMDresisitorcode.smd_calculated_value.append(value.charAt(0) + "");
+                SMDresisitorcode.smd_calculated_value.append(value.charAt(1) + "");
+                SMDresisitorcode.smd_calculated_value.append("" + value.charAt(2) + "");
+                SMDresisitorcode.smd_calculated_value.append(" kΩ");
+            }
+
+            else {
+                SMDresisitorcode.smd_calculated_value.setText(value.charAt(0) + "." + value.charAt(1) + value.charAt(2) + " MΩ");
+            }
         } else if (SMDresisitorcode.third_format_value.equalsIgnoreCase("5")) {
             // value = String.valueOf(SMDresisitorcode.combine_first_second);
             value = SMDresisitorcode.calculated_value;
 
+            if(SMDresisitorcode.text.charAt(0)=='0' && SMDresisitorcode.text.charAt(1)=='0' && SMDresisitorcode.text.charAt(2)=='0')
+            {
+                SMDresisitorcode.smd_calculated_value.setText("0 Ω");
 
-            SMDresisitorcode.smd_calculated_value.append(value.charAt(0)+"");
-            SMDresisitorcode.smd_calculated_value.append(value.charAt(1)+"");
-            SMDresisitorcode.smd_calculated_value.append(".");
-            SMDresisitorcode.smd_calculated_value.append(""+value.charAt(2)+"");
-            SMDresisitorcode.smd_calculated_value.append(" MΩ");
+            }
+            else if(SMDresisitorcode.text.charAt(0)=='0')
+            {
 
+                SMDresisitorcode.smd_calculated_value.append(value.charAt(0) + "");
+                SMDresisitorcode.smd_calculated_value.append(".");
+
+                SMDresisitorcode.smd_calculated_value.append(value.charAt(1) + "");
+                SMDresisitorcode.smd_calculated_value.append(" MΩ");
+
+            }
+            else {
+                SMDresisitorcode.smd_calculated_value.append(value.charAt(0) + "");
+                SMDresisitorcode.smd_calculated_value.append(value.charAt(1) + "");
+                SMDresisitorcode.smd_calculated_value.append(".");
+                SMDresisitorcode.smd_calculated_value.append("" + value.charAt(2) + "");
+                SMDresisitorcode.smd_calculated_value.append(" MΩ");
+            }
 
            // SMDresisitorcode.smd_calculated_value.setText(value.charAt(0) + value.charAt(1) +"." + value.charAt(2) + " MΩ");
 
@@ -85,32 +161,75 @@ public class Formatfourband {
 
             //value = String.valueOf(SMDresisitorcode.combine_first_second);
             value = SMDresisitorcode.calculated_value;
+            if(SMDresisitorcode.text.charAt(0)=='0' && SMDresisitorcode.text.charAt(1)=='0' && SMDresisitorcode.text.charAt(2)=='0')
+            {
+                SMDresisitorcode.smd_calculated_value.setText("0 Ω");
 
-            SMDresisitorcode.smd_calculated_value.append(value.charAt(0)+"");
-            SMDresisitorcode.smd_calculated_value.append(value.charAt(1)+"");
-            SMDresisitorcode.smd_calculated_value.append(""+value.charAt(2)+"");
-            SMDresisitorcode.smd_calculated_value.append(" MΩ");
+            }
 
+            else if(SMDresisitorcode.text.charAt(0)=='0') {
+
+                SMDresisitorcode.smd_calculated_value.append(value.charAt(0) + "");
+                SMDresisitorcode.smd_calculated_value.append(value.charAt(1) + "");
+                SMDresisitorcode.smd_calculated_value.append(" MΩ");
+
+            }
+                else {
+                SMDresisitorcode.smd_calculated_value.append(value.charAt(0) + "");
+                SMDresisitorcode.smd_calculated_value.append(value.charAt(1) + "");
+                SMDresisitorcode.smd_calculated_value.append("" + value.charAt(2) + "");
+                SMDresisitorcode.smd_calculated_value.append(" MΩ");
+            }
            // SMDresisitorcode.smd_calculated_value.setText(value.charAt(0) + value.charAt(1) + value.charAt(2)+" MΩ");
 
         } else if (SMDresisitorcode.third_format_value.equalsIgnoreCase("7")) {
 
             //value = String.valueOf(SMDresisitorcode.combine_first_second);
             value = SMDresisitorcode.calculated_value;
-            SMDresisitorcode.smd_calculated_value.setText(value.charAt(0) + "." + value.charAt(1) +value.charAt(2) + " GΩ");
-        } else if (SMDresisitorcode.third_format_value.equalsIgnoreCase("8")) {
+            if(SMDresisitorcode.text.charAt(0)=='0' && SMDresisitorcode.text.charAt(1)=='0' && SMDresisitorcode.text.charAt(2)=='0')
+            {
+                SMDresisitorcode.smd_calculated_value.setText("0 Ω");
+
+            }
+
+            else if(SMDresisitorcode.text.charAt(0)=='0') {
+
+                SMDresisitorcode.smd_calculated_value.append(value.charAt(0) + "");
+                SMDresisitorcode.smd_calculated_value.append(value.charAt(1) + "");
+                SMDresisitorcode.smd_calculated_value.append("" + value.charAt(2) + "");
+                SMDresisitorcode.smd_calculated_value.append(" MΩ");
+            }
+                else {
+                SMDresisitorcode.smd_calculated_value.setText(value.charAt(0) + "." + value.charAt(1) + value.charAt(2) + " GΩ");
+
+            }} else if (SMDresisitorcode.third_format_value.equalsIgnoreCase("8")) {
 
             // value = String.valueOf(SMDresisitorcode.combine_first_second);
             value = SMDresisitorcode.calculated_value;
 
 
+            if(SMDresisitorcode.text.charAt(0)=='0' && SMDresisitorcode.text.charAt(1)=='0' && SMDresisitorcode.text.charAt(2)=='0')
+            {
+                SMDresisitorcode.smd_calculated_value.setText("0 Ω");
 
-            SMDresisitorcode.smd_calculated_value.append(value.charAt(0)+"");
-            SMDresisitorcode.smd_calculated_value.append(value.charAt(1)+"");
-            SMDresisitorcode.smd_calculated_value.append(".");
-            SMDresisitorcode.smd_calculated_value.append(""+value.charAt(2)+"");
-            SMDresisitorcode.smd_calculated_value.append(" GΩ");
+            }
 
+            else if(SMDresisitorcode.text.charAt(0)=='0') {
+
+
+                SMDresisitorcode.smd_calculated_value.append(value.charAt(0) + "");
+                SMDresisitorcode.smd_calculated_value.append("."+"");
+                SMDresisitorcode.smd_calculated_value.append(value.charAt(1) + "");
+                SMDresisitorcode.smd_calculated_value.append(" GΩ");
+
+            }
+                else {
+                SMDresisitorcode.smd_calculated_value.append(value.charAt(0) + "");
+                SMDresisitorcode.smd_calculated_value.append(value.charAt(1) + "");
+                SMDresisitorcode.smd_calculated_value.append(".");
+                SMDresisitorcode.smd_calculated_value.append("" + value.charAt(2) + "");
+                SMDresisitorcode.smd_calculated_value.append(" GΩ");
+            }
           //  SMDresisitorcode.smd_calculated_value.setText(value.charAt(0)  + value.charAt(1) +  "." + value.charAt(2)+ " GΩ");
 
         } else if (SMDresisitorcode.third_format_value.equalsIgnoreCase("9")) {
@@ -120,12 +239,25 @@ public class Formatfourband {
             value = SMDresisitorcode.calculated_value;
 
 
+            if(SMDresisitorcode.text.charAt(0)=='0' && SMDresisitorcode.text.charAt(1)=='0' && SMDresisitorcode.text.charAt(2)=='0')
+            {
+                SMDresisitorcode.smd_calculated_value.setText("0 Ω");
 
-            SMDresisitorcode.smd_calculated_value.append(value.charAt(0)+"");
-            SMDresisitorcode.smd_calculated_value.append(value.charAt(1)+"");
-            SMDresisitorcode.smd_calculated_value.append(""+value.charAt(2)+"");
-            SMDresisitorcode.smd_calculated_value.append(" GΩ");
+            }
 
+            else if(SMDresisitorcode.text.charAt(0)=='0') {
+
+                SMDresisitorcode.smd_calculated_value.append(value.charAt(0) + "");
+                SMDresisitorcode.smd_calculated_value.append(value.charAt(1) + "");
+                SMDresisitorcode.smd_calculated_value.append(" GΩ");
+
+            }
+                else {
+                SMDresisitorcode.smd_calculated_value.append(value.charAt(0) + "");
+                SMDresisitorcode.smd_calculated_value.append(value.charAt(1) + "");
+                SMDresisitorcode.smd_calculated_value.append("" + value.charAt(2) + "");
+                SMDresisitorcode.smd_calculated_value.append(" GΩ");
+            }
           //  SMDresisitorcode.smd_calculated_value.setText(value.charAt(0) + value.charAt(1) +value.charAt(2)+ " GΩ");
 
         }

@@ -125,10 +125,10 @@ public class SMDresisitorcode extends AppCompatActivity {
                         {
                             first_second_char="0";
                         }
-                        else if(text.charAt(0)=='0')
-                        {
-                            first_second_char=String.valueOf(text.charAt(1));
-                        }
+                      //  else if(text.charAt(0)=='0')
+                    //    {
+                           // first_second_char=String.valueOf(text.charAt(1)+);
+                  //      }
                         else {
                             first_second_char = String.valueOf(text.charAt(0)) + String.valueOf(text.charAt(1) + String.valueOf(text.charAt(2)));
                         }
