@@ -18,23 +18,29 @@ import java.util.Map;
 public class SMDresisitorcode extends AppCompatActivity {
     EditText SMD_input;
     Button calculate;
-    String text;
+  public  static   String text;
     int text_length;
-    TextView smd_calculated_value;
+   public static TextView smd_calculated_value;
     String first_second_char, third_string,third_band_hash;
-    int parse_first_second;
-    int third_char;
+    long parse_first_second;
+
+    long third_char;
+    long calculated_int;
+
     public  HashMap<String, String> color_Coding_band3 = new HashMap<>();
   public static   String calculated_value;
-int calculated_int;
-    ResisitorFormat ResisitorFormat;
+
+    ResisitorSMDformat ResisitorFormat;
+    Formatfourband Formatfourband;
     public static  String  third_format_value;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.smdcolorcode);
 
-        ResisitorFormat = new ResisitorFormat();
+        ResisitorFormat = new ResisitorSMDformat();
+        Formatfourband = new Formatfourband();
+
         color_Coding_band3.put("0", "1");
         color_Coding_band3.put("1", "10");
         color_Coding_band3.put("2", "100");
@@ -59,22 +65,38 @@ int calculated_int;
             public void onClick(View v) {
                 text = SMD_input.getText().toString();
                 if (text.equalsIgnoreCase("")) {
+                    smd_calculated_value.setText("");
                     smd_calculated_value.setText("Invalid Code");
                 } else {
                     text_length = text.length();
                     if (text_length == 1) {
+                        smd_calculated_value.setText("");
                         smd_calculated_value.setText(text.toString() + " Ω");
                     } else if (text_length == 2) {
                         if (text.charAt(0) == '0') {
+                            smd_calculated_value.setText("");
                             smd_calculated_value.setText(String.valueOf(text.charAt(1)) + " Ω");
                         } else {
-
+                            smd_calculated_value.setText("");
                             smd_calculated_value.setText(text.toString() + " Ω");
                         }
                     } else if (text_length == 3) {
 
-                        first_second_char = String.valueOf(text.charAt(0)) + String.valueOf(text.charAt(1));
-                        parse_first_second = Integer.parseInt(first_second_char);
+                        smd_calculated_value.setText("");
+                        if(text.charAt(0)=='0' && text.charAt(1)=='0')
+                        {
+                            first_second_char="0";
+                        }
+                        else if(text.charAt(0)=='0')
+                        {
+                            first_second_char=String.valueOf(text.charAt(1));
+                        }
+                        else {
+                            first_second_char = String.valueOf(text.charAt(0)) + String.valueOf(text.charAt(1));
+                        }
+                            parse_first_second = Long.parseLong(first_second_char);
+
+
                         third_string = String.valueOf(text.charAt(2));
                         third_format_value=third_string;
                        // third_char = Integer.valueOf(third_string);
@@ -85,20 +107,32 @@ int calculated_int;
                         for (Map.Entry<String, String> entry1 : color_Coding_band3.entrySet()) {
                             if (entry1.getKey().equalsIgnoreCase(third_string)) {
                                 third_band_hash = entry1.getValue();
-                                third_char=Integer.parseInt(third_band_hash);
+                                third_char=Long.parseLong(third_band_hash);
 
                                  calculated_int=    parse_first_second*third_char;
                                 calculated_value=String.valueOf(calculated_int);
                                 ResisitorFormat.format_check();
+                              //  break;
                             }
                         }
 
                        // smd_calculated_value.setText("");
                     }
                     else if (text_length == 4) {
+                        smd_calculated_value.setText("");
 
-                        first_second_char = String.valueOf(text.charAt(0)) + String.valueOf(text.charAt(1)+ String.valueOf(text.charAt(2)));
-                        parse_first_second = Integer.parseInt(first_second_char);
+                        if(text.charAt(0)=='0' && text.charAt(1)=='0')
+                        {
+                            first_second_char="0";
+                        }
+                        else if(text.charAt(0)=='0')
+                        {
+                            first_second_char=String.valueOf(text.charAt(1));
+                        }
+                        else {
+                            first_second_char = String.valueOf(text.charAt(0)) + String.valueOf(text.charAt(1) + String.valueOf(text.charAt(2)));
+                        }
+                            parse_first_second =Long.parseLong(first_second_char);
                         third_string = String.valueOf(text.charAt(3));
                         third_format_value=third_string;
                         // third_char = Integer.valueOf(third_string);
@@ -109,11 +143,12 @@ int calculated_int;
                         for (Map.Entry<String, String> entry1 : color_Coding_band3.entrySet()) {
                             if (entry1.getKey().equalsIgnoreCase(third_string)) {
                                 third_band_hash = entry1.getValue();
-                                third_char=Integer.parseInt(third_band_hash);
+                                third_char=Long.parseLong(third_band_hash);
 
                                 calculated_int=    parse_first_second*third_char;
                                 calculated_value=String.valueOf(calculated_int);
-                                ResisitorFormat.format_check();
+                                Formatfourband.format_check();
+                               // break;
                             }
                         }
 
