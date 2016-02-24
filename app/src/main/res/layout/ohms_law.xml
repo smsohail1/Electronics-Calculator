@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<RelativeLayout
+android:layout_centerInParent="true"
+    android:layout_marginLeft="5dp"
+    android:layout_marginTop="10dp"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content">
+    <RelativeLayout
+        android:id="@+id/current_row"
+        android:gravity="center"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+    <Button
+        android:text="I\n1A"
+        android:textColor="#34495e"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/image_row"
+        android:layout_marginTop="5dp"
+        android:layout_below="@+id/current_row"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/volt_button"
+            android:layout_marginLeft="5dp"
+            android:text="V\n5V"
+            android:textColor="#34495e"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+<ImageView
+
+    android:layout_centerInParent="true"
+
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:src="@drawable/ic_launcher"/>
+
+        <Button
+            android:layout_alignParentRight="true"
+            android:id="@+id/resistor_button"
+            android:layout_marginRight="5dp"
+            android:text="R\n5ohm"
+            android:textColor="#34495e"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+
+    <TextView
+android:id="@+id/discription"
+        android:layout_marginTop="10dp"
+        android:textColor="#34495e"
+        android:layout_below="@+id/image_row"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="The power disiaptio nby the ressitor is:"/>
+
+
+
+    <Button
+        android:layout_marginTop="5dp"
+        android:layout_centerInParent="true"
+        android:layout_below="@+id/discription"
+        android:id="@+id/POWER_button"
+        android:text="Power\n5W"
+        android:textColor="#34495e"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/value_discription"
+android:layout_marginLeft="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_below="@+id/POWER_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#34495e"
+        android:text="Nearest value is:"
+
+        />
+    <TextView
+        android:layout_below="@+id/value_discription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#34495e"
+      android:layout_centerInParent="true"
+        android:layout_marginTop="10dp"
+        android:text="d"
+        />
+    </RelativeLayout>
+</RelativeLayout>
