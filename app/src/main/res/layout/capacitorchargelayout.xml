@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <RelativeLayout
+
+
+        android:id="@+id/header_charge"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/header_bg">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="5dp"
+            android:text="Capacitor Charge"
+            android:textColor="#ffffff"
+            android:textSize="25sp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_below="@+id/header_charge"
+        android:layout_above="@+id/adLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+    <RelativeLayout
+        android:id="@+id/input_values"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="10dp">
+
+        <Button
+            android:id="@+id/volt_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+
+
+            android:text="V\n5v" />
+
+        <ImageView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_launcher" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="5dp"
+            android:orientation="vertical">
+
+            <Button
+
+                android:id="@+id/resisitor_button1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+
+                android:text="R\n2 Ω" />
+
+            <Button
+                android:id="@+id/capacitor_button1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+
+                android:text="C\n8 F" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/input_values"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="fill_parent"
+
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="The maximam current and charge of the circuit will be:" />
+
+        <TextView
+            android:id="@+id/current_max"
+            android:layout_width="fill_parent"
+
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="dsd" />
+
+        <TextView
+            android:id="@+id/charge_max"
+
+            android:layout_width="fill_parent"
+
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="dsd" />
+
+        <TextView
+            android:layout_width="fill_parent"
+
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="Calculate the current and the charge at time t=" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/current_time_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1.6s"
+
+                />
+
+
+        </LinearLayout>
+
+        <RelativeLayout
+
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="5dp">
+
+            <TextView
+                android:id="@+id/current_at_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+
+
+                android:text="RΩ" />
+
+            <TextView
+                android:id="@+id/charge_at_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+
+
+                android:text="CF" />
+
+        </RelativeLayout>
+    </LinearLayout>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/adLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:visibility="gone"></LinearLayout>
+</RelativeLayout>

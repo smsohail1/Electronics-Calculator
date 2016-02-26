@@ -67,6 +67,9 @@ public class MainActivity extends AppCompatActivity {
 
 
         Listview_Selection.put(2, IndicatorColorCode.class);
+
+        Listview_Selection.put(4, CapacitorCharge.class);
+        Listview_Selection.put(3, OhmsLaw.class);
         Listview_Selection.put(8, ResistorserialParallel.class);
         calculatormodel = new ArrayList<CalculatorModel>();
 
@@ -74,6 +77,7 @@ public class MainActivity extends AppCompatActivity {
         calculatormodel.add(new CalculatorModel(R.drawable.icon_smd_resistor_color_code, "SMD Resisitor Code"));
         calculatormodel.add(new CalculatorModel(R.drawable.icon_inductor_color_code, "Inductor Color code"));
         calculatormodel.add(new CalculatorModel(R.drawable.icon_ohms_low, "Ohm's Law"));
+        calculatormodel.add(new CalculatorModel(R.drawable.icon_capasitor_charge, "Capacitor Charge"));
 //        calculatormodel.add(new CalculatorModel(R.drawable.icon_reactance_resonace, "Reactance/Resonance"));
 //        calculatormodel.add(new CalculatorModel(R.drawable.icon_filters, "Filters"));
 //        calculatormodel.add(new CalculatorModel(R.drawable.icon_voltage_divider, "Voltage Divider"));
