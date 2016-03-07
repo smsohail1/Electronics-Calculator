@@ -45,7 +45,7 @@
             android:layout_centerVertical="true"
 
 
-            android:text="V\n5v" />
+            android:text="5" />
 
         <ImageView
 
@@ -69,7 +69,7 @@
                 android:layout_height="wrap_content"
 
 
-                android:text="R\n2 Ω" />
+                android:text="2" />
 
             <Button
                 android:id="@+id/capacitor_button1"
@@ -77,7 +77,7 @@
                 android:layout_height="wrap_content"
 
 
-                android:text="C\n8 F" />
+                android:text="8" />
         </LinearLayout>
     </RelativeLayout>
 
@@ -94,6 +94,7 @@
 
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
+
             android:text="The maximam current and charge of the circuit will be:" />
 
         <TextView
@@ -104,14 +105,14 @@
             android:layout_marginTop="5dp"
             android:text="dsd" />
 
-        <TextView
-            android:id="@+id/charge_max"
+        <!--<TextView-->
+            <!--android:id="@+id/charge_max"-->
 
-            android:layout_width="fill_parent"
+            <!--android:layout_width="fill_parent"-->
 
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:text="dsd" />
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginTop="5dp"-->
+            <!--android:text="dsd" />-->
 
         <TextView
             android:layout_width="fill_parent"
@@ -131,7 +132,7 @@
                 android:id="@+id/current_time_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="1.6s"
+                android:text="1.6"
 
                 />
 
@@ -146,24 +147,40 @@
 
             android:layout_marginRight="5dp"
             android:layout_marginTop="5dp">
-
+<TextView
+android:id="@+id/curnt"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="I = "
+    />
             <TextView
+                android:layout_toRightOf="@+id/curnt"
                 android:id="@+id/current_at_time"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
 
 
-                android:text="RΩ" />
+
+                android:text="R" />
 
             <TextView
+                android:layout_toLeftOf="@+id/charge_at_time"
+                android:id="@+id/charge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="C = "
+                />
+            <TextView
+
+                android:layout_alignParentRight="true"
                 android:id="@+id/charge_at_time"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
 
 
-                android:text="CF" />
+
+                android:text="C" />
+
 
         </RelativeLayout>
     </LinearLayout>

@@ -75,6 +75,7 @@ public class IndicatorColorCode extends AppCompatActivity {
         setContentView(R.layout.indicatorcolorcode);
 
 
+        getSupportActionBar().hide();
 
         publishteId = "ca-app-pub-9381472359687969/2648882536";
         AdView mAdView = new AdView(getApplicationContext(), null);

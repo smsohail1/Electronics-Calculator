@@ -45,6 +45,8 @@ public class ResistorserialParallel extends AppCompatActivity {
 
         setContentView(R.layout.resistor_serial_parallel);
 
+        getSupportActionBar().hide();
+
         publishteId = "ca-app-pub-9381472359687969/2648882536";
         AdView mAdView = new AdView(getApplicationContext(), null);
         ad_Id = publishteId;

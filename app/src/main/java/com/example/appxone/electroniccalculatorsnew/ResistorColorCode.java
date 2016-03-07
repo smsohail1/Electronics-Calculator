@@ -69,6 +69,7 @@ public class ResistorColorCode extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.resistorlcolorcode);
 
+        getSupportActionBar().hide();
 
 
         publishteId = "ca-app-pub-9381472359687969/2648882536";

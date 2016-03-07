@@ -33,6 +33,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        getSupportActionBar().hide();
+
         publishteId = "ca-app-pub-9381472359687969/2648882536";
         AdView mAdView = new AdView(getApplicationContext(), null);
          ad_Id = publishteId;
@@ -68,15 +71,15 @@ public class MainActivity extends AppCompatActivity {
 
         Listview_Selection.put(2, IndicatorColorCode.class);
 
-        Listview_Selection.put(4, CapacitorCharge.class);
-        Listview_Selection.put(3, OhmsLaw.class);
-        Listview_Selection.put(8, ResistorserialParallel.class);
+        Listview_Selection.put(3, CapacitorCharge.class);
+       // Listview_Selection.put(3, OhmsLaw.class);
+        Listview_Selection.put(4, ResistorserialParallel.class);
         calculatormodel = new ArrayList<CalculatorModel>();
 
         calculatormodel.add(new CalculatorModel(R.drawable.icon_resistor_color_code, "Resistor Color Code"));
         calculatormodel.add(new CalculatorModel(R.drawable.icon_smd_resistor_color_code, "SMD Resisitor Code"));
         calculatormodel.add(new CalculatorModel(R.drawable.icon_inductor_color_code, "Inductor Color code"));
-        calculatormodel.add(new CalculatorModel(R.drawable.icon_ohms_low, "Ohm's Law"));
+      //  calculatormodel.add(new CalculatorModel(R.drawable.icon_ohms_low, "Ohm's Law"));
         calculatormodel.add(new CalculatorModel(R.drawable.icon_capasitor_charge, "Capacitor Charge"));
 //        calculatormodel.add(new CalculatorModel(R.drawable.icon_reactance_resonace, "Reactance/Resonance"));
 //        calculatormodel.add(new CalculatorModel(R.drawable.icon_filters, "Filters"));
