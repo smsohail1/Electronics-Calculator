@@ -1,0 +1,394 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <RelativeLayout
+
+
+        android:id="@+id/header_decibel"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/header_bg">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="5dp"
+            android:text="Frequency Converter"
+            android:textColor="#ffffff"
+            android:textSize="25sp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/header_decibel"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="5dp">
+
+        <TextView
+            android:id="@+id/desccription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="This tool allow you to calculate the frequency,period and wavelength."
+            android:textColor="#000000" />
+
+
+        <LinearLayout
+            android:id="@+id/fre_pow"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/desccription"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/gain_rel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="#34495e"
+
+                android:paddingBottom="10dp"
+                android:paddingLeft="25dp"
+                android:paddingRight="25dp"
+                android:paddingTop="10dp">
+
+                <TextView
+                    android:id="@+id/gAIN_level_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Frequency"
+                    android:textColor="#ffffff"
+
+                    />
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_below="@+id/gAIN_level_text"
+                    android:layout_centerInParent="true">
+
+                    <TextView
+                        android:id="@+id/gain_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:text="1.3"
+
+                        android:textColor="#ffffff" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@+id/gain_value"
+
+                        android:text=" hz"
+
+                        android:textColor="#ffffff" />
+
+                </RelativeLayout>
+            </RelativeLayout>
+
+
+            <RelativeLayout
+
+                android:id="@+id/power_rel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="#34495e"
+                android:paddingBottom="10dp"
+                android:paddingLeft="38dp"
+                android:paddingRight="40dp"
+                android:paddingTop="10dp">
+
+                <TextView
+                    android:id="@+id/power_level_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Period"
+                    android:textColor="#ffffff"
+
+                    />
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_below="@+id/power_level_text"
+                    android:layout_centerInParent="true">
+
+                    <TextView
+                        android:id="@+id/power_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:text="0.76"
+
+                        android:textColor="#ffffff" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@+id/power_value"
+
+                        android:text=" s"
+
+                        android:textColor="#ffffff" />
+                </RelativeLayout>
+            </RelativeLayout>
+
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/desc"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/fre_pow"
+            android:layout_marginTop="5dp"
+            android:text="To calculate the wavelength,isert the wave velocity,or select from comon values"
+
+            android:textColor="#000000" />
+
+
+        <RelativeLayout
+
+            android:id="@+id/spinner"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/desc"
+            android:layout_marginTop="5dp">
+
+
+            <RelativeLayout
+                android:id="@+id/wave_rel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginTop="5dp"
+                android:background="#34495e"
+                android:paddingBottom="10dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:paddingTop="10dp">
+
+                <TextView
+                    android:id="@+id/wave_level_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Wave Velocity"
+                    android:textColor="#ffffff"
+
+                    />
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_below="@+id/wave_level_text"
+                    android:layout_centerInParent="true">
+
+                    <TextView
+                        android:id="@+id/wave_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:text="343"
+
+                        android:textColor="#ffffff" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@+id/wave_value"
+
+                        android:text=" m/s"
+
+                        android:textColor="#ffffff" />
+                </RelativeLayout>
+            </RelativeLayout>
+
+
+            <Spinner
+                android:id="@+id/spinner_quantity"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true" />
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+
+            android:id="@+id/wavelength_rel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/spinner"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="5dp"
+            android:background="#34495e"
+
+            android:paddingBottom="10dp"
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp"
+            android:paddingTop="10dp">
+
+            <TextView
+                android:id="@+id/wavelength_level_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Wavelength"
+                android:textColor="#ffffff"
+
+                />
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_below="@+id/wavelength_level_text"
+                android:layout_centerInParent="true">
+
+                <TextView
+                    android:id="@+id/wavelength_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:text="34.3"
+
+                    android:textColor="#ffffff" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/wavelength_value"
+
+                    android:text=" m"
+
+                    android:textColor="#ffffff" />
+
+            </RelativeLayout>
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_marginTop="10dp"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/wavelength_rel"
+            android:gravity="center_horizontal">
+
+
+            <TextView
+                android:id="@+id/lamdaby2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:text="λ/2 = "
+
+                android:textColor="#000000" />
+
+
+            <TextView
+                android:id="@+id/lamda2_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/lamdaby2"
+
+                android:text="171.5"
+
+                android:textColor="#000000" />
+
+            <TextView
+                android:id="@+id/mid_desc_unit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/lamda2_value"
+
+
+                android:text=" m"
+
+                android:textColor="#000000" />
+
+            <TextView
+                android:id="@+id/mid_desc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/mid_desc_unit"
+
+
+                android:text=" - λ/4 = "
+
+                android:textColor="#000000" />
+
+
+            <TextView
+                android:id="@+id/lamda4_value_desc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/mid_desc"
+
+                android:text="8.57"
+
+                android:textColor="#000000" />
+
+            <TextView
+                android:id="@+id/mid_unit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/lamda4_value_desc"
+
+
+                android:text=" m"
+
+                android:textColor="#000000" />
+
+
+            <TextView
+                android:id="@+id/_desc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/mid_unit"
+
+
+                android:text=" - λ/8 = "
+
+                android:textColor="#000000" />
+
+
+            <TextView
+                android:id="@+id/lamda8_value_desc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/_desc"
+
+                android:text="4.288"
+
+                android:textColor="#000000" />
+
+            <TextView
+                android:id="@+id/right_unit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/lamda8_value_desc"
+
+
+                android:text=" m"
+
+                android:textColor="#000000" />
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+</RelativeLayout>

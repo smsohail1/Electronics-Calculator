@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+
+
+        android:id="@+id/header_decibel"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/header_bg">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="5dp"
+            android:text="Decibel Converter"
+            android:textColor="#ffffff"
+            android:textSize="25sp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/header_decibel"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="5dp">
+
+        <TextView
+
+            android:id="@+id/Description_decibel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Set the quanity type and decibel unit, and enter the value to convert."
+            android:textColor="#000000" />
+
+        <RelativeLayout
+            android:id="@+id/spinner"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/Description_decibel"
+            android:layout_marginTop="5dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+
+                android:layout_marginTop="5dp"
+                android:text="Quantity type"
+                android:textColor="#000000" />
+
+            <Spinner
+                android:id="@+id/spinner_quantity"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true" />
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/decibel_button"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/spinner"
+            android:layout_marginTop="5dp">
+
+
+            <RelativeLayout
+                android:id="@+id/decibel_rel"
+                android:layout_centerInParent="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#34495e"
+                android:padding="10dp">
+
+                <TextView
+                    android:id="@+id/decibel_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Decibels"
+                    android:textColor="#ffffff"
+
+                    />
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/decibel_text"
+                    android:layout_centerInParent="true">
+
+                    <TextView
+                        android:id="@+id/decibel_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:text="1"
+
+                        android:textColor="#ffffff" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@+id/decibel_value"
+
+                        android:text=" db"
+
+                        android:textColor="#ffffff" />
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+            <!--<Button-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginLeft="10dp"-->
+            <!--android:background="#34495e"-->
+            <!--android:text="20 db"-->
+            <!--android:textColor="#ffffff" />-->
+
+            <!--<Spinner-->
+                <!--android:id="@+id/spinner_quantity_"-->
+                <!--android:layout_width="100dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_alignParentRight="true" />-->
+
+
+        </RelativeLayout>
+
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/decibel_button"
+            android:gravity="center"
+            android:layout_marginTop="5dp"
+            android:orientation="vertical">
+
+
+            <RelativeLayout
+                android:id="@+id/refrence_rel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#34495e"
+                android:padding="10dp">
+
+                <TextView
+                    android:id="@+id/Reference_level_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Reference_level"
+                    android:textColor="#ffffff"
+
+                    />
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_below="@+id/Reference_level_text"
+                    android:layout_centerInParent="true">
+
+                    <TextView
+                        android:id="@+id/reference_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:text="1"
+
+                        android:textColor="#ffffff" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@+id/reference_value"
+
+                        android:text=" W"
+
+                        android:textColor="#ffffff" />
+                </RelativeLayout>
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/power_rel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="#34495e"
+                android:paddingBottom="10dp"
+                android:paddingLeft="40dp"
+                android:paddingRight="40dp"
+                android:paddingTop="10dp">
+
+                <TextView
+                    android:id="@+id/power_level_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="power"
+                    android:textColor="#ffffff"
+
+                    />
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_below="@+id/power_level_text"
+                    android:layout_centerInParent="true">
+
+                    <TextView
+                        android:id="@+id/power_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:text="5"
+
+                        android:textColor="#ffffff" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@+id/power_value"
+
+                        android:text=" W"
+
+                        android:textColor="#ffffff" />
+                </RelativeLayout>
+            </RelativeLayout>
+
+
+            <RelativeLayout
+android:id="@+id/gain_rel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="#34495e"
+
+                android:paddingBottom="10dp"
+                android:paddingLeft="45dp"
+                android:paddingRight="45dp"
+                android:paddingTop="10dp">
+
+                <TextView
+                    android:id="@+id/gAIN_level_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Gain"
+                    android:textColor="#ffffff"
+
+                    />
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_below="@+id/gAIN_level_text"
+                    android:layout_centerInParent="true">
+
+                    <TextView
+                        android:id="@+id/gain_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:text="5"
+
+                        android:textColor="#ffffff" />
+
+                </RelativeLayout>
+            </RelativeLayout>
+            <!--<Button-->
+
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginLeft="10dp"-->
+            <!--android:layout_marginTop="5dp"-->
+            <!--android:background="#34495e"-->
+            <!--android:text="20 db"-->
+            <!--android:textColor="#ffffff" />-->
+
+
+            <!--<Button-->
+
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginLeft="10dp"-->
+            <!--android:layout_marginTop="5dp"-->
+            <!--android:background="#34495e"-->
+            <!--android:text="20 db"-->
+            <!--android:textColor="#ffffff" />-->
+
+        </LinearLayout>
+    </RelativeLayout>
+</RelativeLayout>

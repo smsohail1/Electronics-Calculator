@@ -72,7 +72,7 @@ public class ResistorserialParallel extends AppCompatActivity {
             }
         });
 
-toast=Toast.makeText(ResistorserialParallel.this,"Please Enter Some Value",Toast.LENGTH_SHORT);
+        toast = Toast.makeText(ResistorserialParallel.this, "Please Enter Some Value", Toast.LENGTH_SHORT);
 
         typeface = Typeface.createFromAsset(getAssets(), "fonts/AvenirLTStd-Medium.otf");
 

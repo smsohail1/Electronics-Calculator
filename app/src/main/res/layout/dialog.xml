@@ -18,6 +18,7 @@
             android:textColor="#000000" />
 
         <RelativeLayout
+            android:gravity="center_horizontal"
             android:id="@+id/user_input"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
@@ -33,7 +34,15 @@
                 android:digits="0123456789."
                 android:ems="10"
                 android:inputType="numberDecimal" />
-
+<TextView
+    android:layout_centerVertical="true"
+    android:layout_toRightOf="@+id/editText"
+    android:id="@+id/unit"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="hz"
+    android:textColor="#000000"
+    />
             <!--<Spinner-->
             <!--android:layout_width="wrap_content"-->
             <!--android:layout_height="wrap_content"-->

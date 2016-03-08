@@ -74,6 +74,7 @@ public class MainActivity extends AppCompatActivity {
         Listview_Selection.put(3, CapacitorCharge.class);
        // Listview_Selection.put(3, OhmsLaw.class);
         Listview_Selection.put(4, ResistorserialParallel.class);
+        Listview_Selection.put(5, Frequencyconverter.class);
         calculatormodel = new ArrayList<CalculatorModel>();
 
         calculatormodel.add(new CalculatorModel(R.drawable.icon_resistor_color_code, "Resistor Color Code"));
@@ -98,8 +99,8 @@ public class MainActivity extends AppCompatActivity {
 //        calculatormodel.add(new CalculatorModel(R.drawable.icon_pcb_trace_with_calculator, "PCB Trace Width  Calculator"));
 //        calculatormodel.add(new CalculatorModel(R.drawable.icon_power_calculator, "Power Calculator"));
 //        calculatormodel.add(new CalculatorModel(R.drawable.icon_transformation, "Y- Transformation"));
-//        calculatormodel.add(new CalculatorModel(R.drawable.icon_descible_converter, "Decibel Converter"));
-//        calculatormodel.add(new CalculatorModel(R.drawable.icon_frequency_converter, "Frequency Converter"));
+      //  calculatormodel.add(new CalculatorModel(R.drawable.icon_descible_converter, "Decibel Converter"));
+        calculatormodel.add(new CalculatorModel(R.drawable.icon_frequency_converter, "Frequency Converter"));
 //        calculatormodel.add(new CalculatorModel(R.drawable.icon_analog_digital_converter, "Analog-Digital Converter"));
         calculator_List = (ListView) findViewById(R.id.list_calculator);
         calculator_adapter = new CalculatorsAdapter(getApplicationContext(), calculatormodel);
