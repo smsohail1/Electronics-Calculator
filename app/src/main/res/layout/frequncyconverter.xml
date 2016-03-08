@@ -106,8 +106,8 @@
                 android:layout_marginTop="5dp"
                 android:background="#34495e"
                 android:paddingBottom="10dp"
-                android:paddingLeft="38dp"
-                android:paddingRight="40dp"
+                android:paddingLeft="37dp"
+                android:paddingRight="37dp"
                 android:paddingTop="10dp">
 
                 <TextView
@@ -238,8 +238,8 @@
             android:background="#34495e"
 
             android:paddingBottom="10dp"
-            android:paddingLeft="30dp"
-            android:paddingRight="30dp"
+            android:paddingLeft="25dp"
+            android:paddingRight="25dp"
             android:paddingTop="10dp">
 
             <TextView
@@ -391,4 +391,17 @@
 
 
     </RelativeLayout>
+
+
+
+
+
+    <LinearLayout
+        android:id="@+id/adLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:visibility="gone"></LinearLayout>
 </RelativeLayout>
