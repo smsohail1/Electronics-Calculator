@@ -61,9 +61,11 @@
                 android:paddingTop="10dp">
 
                 <TextView
+
                     android:id="@+id/gAIN_level_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
                     android:text="Frequency"
                     android:textColor="#ffffff"
 
@@ -111,9 +113,11 @@
                 android:paddingTop="10dp">
 
                 <TextView
+
                     android:id="@+id/power_level_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
                     android:text="Period"
                     android:textColor="#ffffff"
 
@@ -182,9 +186,11 @@
                 android:paddingTop="10dp">
 
                 <TextView
+
                     android:id="@+id/wave_level_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
                     android:text="Wave Velocity"
                     android:textColor="#ffffff"
 
@@ -220,7 +226,7 @@
 
             <Spinner
                 android:id="@+id/spinner_quantity"
-                android:layout_width="100dp"
+                android:layout_width="120dp"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true" />
 
@@ -246,6 +252,7 @@
                 android:id="@+id/wavelength_level_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
                 android:text="Wavelength"
                 android:textColor="#ffffff"
 
@@ -282,10 +289,10 @@
 
 
         <RelativeLayout
-            android:layout_marginTop="10dp"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/wavelength_rel"
+            android:layout_marginTop="10dp"
             android:gravity="center_horizontal">
 
 
@@ -391,9 +398,6 @@
 
 
     </RelativeLayout>
-
-
-
 
 
     <LinearLayout

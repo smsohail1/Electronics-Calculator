@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -18,6 +19,20 @@ import com.google.android.gms.ads.AdSize;
 import com.google.android.gms.ads.AdView;
 
 import java.text.DecimalFormat;
+import java.util.List;
+
+
+import java.util.ArrayList;
+import java.util.List;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.Spinner;
+import android.widget.Toast;
 
 /**
  * Created by APPXONE on 3/8/2016.
@@ -27,14 +42,17 @@ public class Frequencyconverter extends AppCompatActivity {
     TextView dialog_edidtext, dialog_header;
     Button diaog_cancel_button, dialog_ok_button;
     Dialog dialog_custom;
-    TextView frequency_val, period_val, wavvelocity_val, wavelength_val;
+  //  TextView frequency_val, period_val;
+   public static TextView  wavvelocity_val,frequency_val, period_val;
+  public static   TextView  wavelength_val;
+
     RelativeLayout frequency_rel, period_rel, wavvelocity_rel, wavelength_rel;
     TextView frq_unit, period_unit, wavevelocity_unit, wavelength_unit;
-    TextView lamda2_value, lamda4_value, lamda8_value;
+  public static   TextView lamda2_value, lamda4_value, lamda8_value;
     TextView lamda2_unit, lamda4_unit, lamda8_unit;
 
-    String fre, per, wavevelocity, wavelength;
-
+    String fre, per, wavelength;
+public  static  String  wavevelocity;
     Double OUTPUT_PERIOD, OUTPUT_WAVELENGTH, OUTPUT_fre;
     Typeface typeface;
     Double fre_double, per_double, wavevelocity_double, wavelength_double;
@@ -48,6 +66,8 @@ public class Frequencyconverter extends AppCompatActivity {
     String publishteId, ad_Id;
     int check;
 
+    private Spinner spinner1;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,7 +75,12 @@ public class Frequencyconverter extends AppCompatActivity {
 
 
         getSupportActionBar().hide();
+
         check = 0;
+        addItemsOnSpinner2();
+
+
+        spinner1.setSelection(0);
         publishteId = "ca-app-pub-9381472359687969/2648882536";
         AdView mAdView = new AdView(getApplicationContext(), null);
         ad_Id = publishteId;
@@ -81,7 +106,7 @@ public class Frequencyconverter extends AppCompatActivity {
             }
         });
 
-        t = Toast.makeText(Frequencyconverter.this, "Invalid digit", Toast.LENGTH_SHORT);
+        t = Toast.makeText(Frequencyconverter.this, "Invalid Digit", Toast.LENGTH_SHORT);
         format = new DecimalFormat(".00");
 
         typeface = Typeface.createFromAsset(getAssets(), "fonts/AvenirLTStd-Medium.otf");
@@ -124,6 +149,9 @@ public class Frequencyconverter extends AppCompatActivity {
         dialog_custom = new Dialog(Frequencyconverter.this);
         dialog_custom.setCancelable(true);
         dialog_custom.setContentView(view);
+
+        addListenerOnSpinnerItemSelection();
+
         frequency_rel.setOnClickListener(new View.OnClickListener() {
                                              @Override
                                              public void onClick(View v) {
@@ -145,7 +173,7 @@ public class Frequencyconverter extends AppCompatActivity {
 
                                                          fre = dialog_edidtext.getText().toString();
                                                          // per = period_val.getText().toString();
-                                                         check=0;
+                                                         check = 0;
                                                          for (int i = 0; i < fre.length(); i++) {
                                                              if (fre.charAt(i) == '.') {
                                                                  check++;
@@ -157,9 +185,7 @@ public class Frequencyconverter extends AppCompatActivity {
                                                              t.show();
                                                          } else if (fre.equalsIgnoreCase(".")) {
                                                              t.show();
-                                                         }
-
-                                                         else {
+                                                         } else {
 
                                                              wavevelocity = wavvelocity_val.getText().toString();
                                                              fre_double = Double.parseDouble(fre);
@@ -185,7 +211,7 @@ public class Frequencyconverter extends AppCompatActivity {
                                                              }
                                                              // t=1/f;
 
-                                                             wavevelocity = wavvelocity_val.getText().toString();
+                                                             wavevelocity = wavelength_val.getText().toString();
 
                                                              wavevelocity_double = Double.parseDouble(wavevelocity);
                                                              first_sub = wavevelocity_double / 2;
@@ -252,7 +278,7 @@ public class Frequencyconverter extends AppCompatActivity {
                         //per_double = Double.parseDouble(per);
                         //wavevelocity_double = Double.parseDouble(wavevelocity);
 
-                        check=0;
+                        check = 0;
                         for (int i = 0; i < wavevelocity.length(); i++) {
                             if (wavevelocity.charAt(i) == '.') {
                                 check++;
@@ -262,9 +288,7 @@ public class Frequencyconverter extends AppCompatActivity {
                             t.show();
                         } else if (check > 1) {
                             t.show();
-                        }
-
-                      else  if (wavevelocity.equalsIgnoreCase(".")) {
+                        } else if (wavevelocity.equalsIgnoreCase(".")) {
                             t.show();
                         } else {
 
@@ -351,7 +375,7 @@ public class Frequencyconverter extends AppCompatActivity {
                         //wavelength_double = Double.parseDouble(wavelength);
                         // per_double = Double.parseDouble(per);
 
-                        check=0;
+                        check = 0;
                         for (int i = 0; i < per.length(); i++) {
                             if (per.charAt(i) == '.') {
                                 check++;
@@ -363,9 +387,7 @@ public class Frequencyconverter extends AppCompatActivity {
                             t.show();
                         } else if (per.equalsIgnoreCase(".")) {
                             t.show();
-                        }
-
-                         else {
+                        } else {
 
                             fre = frequency_val.getText().toString();
                             wavevelocity = wavvelocity_val.getText().toString();
@@ -387,7 +409,7 @@ public class Frequencyconverter extends AppCompatActivity {
                             // t=1/f;
 
 
-                            wavevelocity = wavvelocity_val.getText().toString();
+                            wavevelocity = wavelength_val.getText().toString();
 
                             wavevelocity_double = Double.parseDouble(wavevelocity);
                             first_sub = wavevelocity_double / 2;
@@ -430,6 +452,10 @@ public class Frequencyconverter extends AppCompatActivity {
                 diaog_cancel_button.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+                        Toast.makeText(Frequencyconverter.this,
+                                "OnClickListener : " +
+                                        "\nSpinner 1 : " + String.valueOf(spinner1.getSelectedItem()),
+                                Toast.LENGTH_SHORT).show();
                         dialog_custom.dismiss();
                     }
                 });
@@ -450,7 +476,7 @@ public class Frequencyconverter extends AppCompatActivity {
                         //wavevelocity_double = Double.parseDouble(wavevelocity);
 
 
-                        check=0;
+                        check = 0;
                         for (int i = 0; i < wavelength.length(); i++) {
                             if (wavelength.charAt(i) == '.') {
                                 check++;
@@ -460,9 +486,7 @@ public class Frequencyconverter extends AppCompatActivity {
                             t.show();
                         } else if (check > 1) {
                             t.show();
-                        }
-
-                        if (wavelength.equalsIgnoreCase(".")) {
+                        } else if (wavelength.equalsIgnoreCase(".")) {
                             t.show();
                         } else {
 
@@ -494,7 +518,7 @@ public class Frequencyconverter extends AppCompatActivity {
                             // t=1/f;
 
 
-                            wavevelocity = wavvelocity_val.getText().toString();
+                            wavevelocity = wavelength_val.getText().toString();
 
                             wavevelocity_double = Double.parseDouble(wavevelocity);
                             first_sub = wavevelocity_double / 2;
@@ -535,5 +559,57 @@ public class Frequencyconverter extends AppCompatActivity {
             }
         });
 
+    }
+
+    public void addItemsOnSpinner2() {
+
+        spinner1 = (Spinner) findViewById(R.id.spinner_quantity);
+        List<String> list = new ArrayList<String>();
+        list.add("Custom");
+        list.add("Light (air)");
+        list.add("Light (water)");
+
+        list.add("Sound (air)");
+        list.add("Sound (water)");
+        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this,
+                android.R.layout.simple_spinner_item, list);
+        dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner1.setAdapter(dataAdapter);
+
+    }
+
+    public void addListenerOnSpinnerItemSelection() {
+        spinner1 = (Spinner) findViewById(R.id.spinner_quantity);
+        spinner1.setOnItemSelectedListener(new CustomOnItemSelectedListener());
+//        Toast.makeText(Frequencyconverter.this,
+//                "OnItemSelectedListener : " + CustomOnItemSelectedListener.values+"",
+//                Toast.LENGTH_SHORT).show();
+
+       // wavvelocity_val.setText(String.valueOf(CustomOnItemSelectedListener.values));
+
+
+
+
+//
+//        wavevelocity = wavvelocity_val.getText().toString();
+//
+//        fre = frequency_val.getText().toString();
+//        per = period_val.getText().toString();
+//        fre_double = Double.parseDouble(fre);
+//        per_double = Double.parseDouble(per);
+//        wavevelocity_double = Double.parseDouble(wavevelocity);
+//        OUTPUT_WAVELENGTH = wavevelocity_double / fre_double;
+//        wavelength_val.setText(format.format(OUTPUT_WAVELENGTH).toString());
+
+
+
+
+
+//        if (format.format(OUTPUT_WAVELENGTH).toString().charAt(0) == '.') {
+//
+//            wavelength_val.setText("0" + format.format(OUTPUT_WAVELENGTH).toString());
+//        } else {
+            //wavelength_val.setText(format.format(OUTPUT_WAVELENGTH).toString());
+        //}
     }
 }
