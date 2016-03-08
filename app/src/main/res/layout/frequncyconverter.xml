@@ -92,7 +92,7 @@
                         android:layout_height="wrap_content"
                         android:layout_toRightOf="@+id/gain_value"
 
-                        android:text=" hz"
+                        android:text=" Hz"
 
                         android:textColor="#ffffff" />
 
