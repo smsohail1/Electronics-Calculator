@@ -68,6 +68,7 @@ public class Frequencyconverter extends AppCompatActivity {
 
     private Spinner spinner1;
     public static Spinner unit_convertion;
+    String collection;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -80,7 +81,7 @@ public class Frequencyconverter extends AppCompatActivity {
         check = 0;
         addItemsOnSpinner2();
 
-
+        collection = "";
         spinner1.setSelection(0);
         publishteId = "ca-app-pub-9381472359687969/2648882536";
         AdView mAdView = new AdView(getApplicationContext(), null);
@@ -195,179 +196,304 @@ public class Frequencyconverter extends AppCompatActivity {
 
                                                          // fre = dialog_edidtext.getText().toString();
 
-                                                         fre = frequency_val.getText().toString();
+                                                         fre = dialog_edidtext.getText().toString();
                                                          int length = fre.length();
-                                                         if (UnitOnItemSelectedListener.unit_value == "Hz") {
-                                                             if (length == 1 || length == 2 || length == 3) {
+                                                         if (fre.contains(".")) {
 
-                                                                 fre = dialog_edidtext.getText().toString();
-                                                                 fre_unit.setText("Hz");
-                                                                 frequency_val.setText(fre.toString());
-                                                             } else if (length == 4 || length == 5 || length == 6) {
-                                                                 fre_double = Double.parseDouble(fre);
-                                                                 fre_double = fre_double / 1000;
-                                                                 fre_unit.setText("kHz");
-                                                                 frequency_val.setText(fre_double.toString());
+                                                             for (int i = 0; fre.charAt(i) != '.'; i++) {
+                                                                 collection += fre.charAt(i);
+                                                             }
 
-                                                             } else if (length == 7 || length == 8 || length == 9) {
-                                                                 fre_double = Double.parseDouble(fre);
-                                                                 fre_double = fre_double / 1000000;
-                                                                 fre_unit.setText("MHz");
-                                                                 frequency_val.setText(fre_double.toString());
+                                                             if (UnitOnItemSelectedListener.unit_value == "Hz") {
+                                                                 if (collection.length() == 1 || collection.length() == 2 || collection.length() == 3) {
 
-                                                             } else if (length == 10 || length == 11 || length == 12) {
-                                                                 fre_double = Double.parseDouble(fre);
-                                                                 fre_double = fre_double / 1000000000;
-                                                                 fre_unit.setText("GHz");
-                                                                 frequency_val.setText(fre_double.toString());
+                                                                     fre = dialog_edidtext.getText().toString();
+                                                                     fre_unit.setText("Hz");
+                                                                     frequency_val.setText(fre.toString());
+                                                                 } else if (collection.length() == 4 || collection.length() == 5 || collection.length() == 6) {
+                                                                     fre_double = Double.parseDouble(fre);
+                                                                     fre_double = fre_double / 1000;
+                                                                     fre_unit.setText("kHz");
+                                                                     frequency_val.setText(fre_double.toString());
+
+                                                                 } else if (collection.length() == 7 || collection.length() == 8 || collection.length() == 9) {
+                                                                     fre_double = Double.parseDouble(fre);
+                                                                     fre_double = fre_double / 1000000;
+                                                                     fre_unit.setText("MHz");
+                                                                     frequency_val.setText(fre_double.toString());
+
+                                                                 } else if (collection.length() == 10 || collection.length() == 11 || collection.length() == 12) {
+                                                                     fre_double = Double.parseDouble(fre);
+                                                                     fre_double = fre_double / 1000000000;
+                                                                     fre_unit.setText("GHz");
+                                                                     frequency_val.setText(fre_double.toString());
+
+                                                                 }
+
+
+                                                             } else if (UnitOnItemSelectedListener.unit_value == "mHz") {
+
+                                                                 if (collection.length() == 1 || collection.length() == 2 || collection.length() == 3) {
+
+                                                                     fre = dialog_edidtext.getText().toString();
+                                                                     fre_unit.setText("mHz");
+                                                                     frequency_val.setText(fre.toString());
+                                                                 } else if (collection.length() == 4 || collection.length() == 5 || collection.length() == 6) {
+                                                                     fre_double = Double.parseDouble(fre);
+                                                                     fre_double = fre_double / 1000;
+                                                                     fre_unit.setText("Hz");
+                                                                     frequency_val.setText(fre_double.toString());
+
+                                                                 } else if (collection.length() == 7 || collection.length() == 8 || collection.length() == 9) {
+                                                                     fre_double = Double.parseDouble(fre);
+                                                                     fre_double = fre_double / 1000000;
+                                                                     fre_unit.setText("kHz");
+                                                                     frequency_val.setText(fre_double.toString());
+
+                                                                 } else if (collection.length() == 10 || collection.length() == 11 || collection.length() == 12) {
+                                                                     fre_double = Double.parseDouble(fre);
+                                                                     fre_double = fre_double / 1000000000;
+                                                                     fre_unit.setText("MHz");
+                                                                     frequency_val.setText(fre_double.toString());
+
+                                                                 } else if (collection.length() >= 13) {
+                                                                     fre_double = Double.parseDouble(fre);
+                                                                     fre_double = fre_double / (Math.pow(10, 12));
+                                                                     fre_unit.setText("GHz");
+                                                                     frequency_val.setText(fre_double.toString());
+
+                                                                 }
+
+
+                                                             } else if (UnitOnItemSelectedListener.unit_value == "μHz") {
+
+                                                                 if (collection.length() == 1 || collection.length() == 2 || collection.length() == 3) {
+
+                                                                     fre = dialog_edidtext.getText().toString();
+                                                                     fre_unit.setText("μHz");
+                                                                     frequency_val.setText(fre.toString());
+                                                                 } else if (collection.length() == 4 || collection.length() == 5 || collection.length() == 6) {
+                                                                     fre_double = Double.parseDouble(fre);
+                                                                     fre_double = fre_double / 1000;
+                                                                     fre_unit.setText("mHz");
+                                                                     frequency_val.setText(fre_double.toString());
+
+                                                                 } else if (collection.length() == 7 || collection.length() == 8 || collection.length() == 9) {
+                                                                     fre_double = Double.parseDouble(fre);
+                                                                     fre_double = fre_double / 1000000;
+                                                                     fre_unit.setText("Hz");
+                                                                     frequency_val.setText(fre_double.toString());
+
+                                                                 } else if (collection.length() == 10 || collection.length() == 11 || collection.length() == 12) {
+                                                                     fre_double = Double.parseDouble(fre);
+                                                                     fre_double = fre_double / 1000000000;
+                                                                     fre_unit.setText("kHz");
+                                                                     frequency_val.setText(fre_double.toString());
+
+                                                                 } else if (collection.length() >= 13 || collection.length() >= 14 || collection.length() >= 15) {
+                                                                     fre_double = Double.parseDouble(fre);
+                                                                     fre_double = fre_double / (Math.pow(10, 12));
+                                                                     fre_unit.setText("MHz");
+                                                                     frequency_val.setText(fre_double.toString());
+
+                                                                 } else if (collection.length() >= 16) {
+                                                                     fre_double = Double.parseDouble(fre);
+                                                                     fre_double = fre_double / (Math.pow(10, 15));
+                                                                     fre_unit.setText("GHz");
+                                                                     frequency_val.setText(fre_double.toString());
+
+                                                                 }
+
+
+                                                             } else if (UnitOnItemSelectedListener.unit_value == "kHz") {
+
+
+                                                                 if (collection.length() == 1 || collection.length() == 2 || collection.length() == 3) {
+
+                                                                     fre = dialog_edidtext.getText().toString();
+                                                                     fre_unit.setText("kHz");
+                                                                     frequency_val.setText(fre.toString());
+                                                                 } else if (collection.length() == 4 || collection.length() == 5 || collection.length() == 6) {
+                                                                     fre_double = Double.parseDouble(fre);
+                                                                     fre_double = fre_double / 1000;
+                                                                     fre_unit.setText("MHz");
+                                                                     frequency_val.setText(fre_double.toString());
+
+                                                                 } else if (collection.length() >= 7) {
+                                                                     fre_double = Double.parseDouble(fre);
+                                                                     fre_double = fre_double / 1000000;
+                                                                     fre_unit.setText("GHz");
+                                                                     frequency_val.setText(fre_double.toString());
+
+                                                                 }
+
+//
+
+
+                                                             } else if (UnitOnItemSelectedListener.unit_value == "MHz") {
+
+                                                                 if (collection.length() == 1 || collection.length() == 2 || collection.length() == 3) {
+
+                                                                     fre = dialog_edidtext.getText().toString();
+                                                                     fre_unit.setText("MHz");
+                                                                     frequency_val.setText(fre.toString());
+                                                                 } else if (collection.length() >= 4) {
+                                                                     fre_double = Double.parseDouble(fre);
+                                                                     fre_double = fre_double / 1000;
+                                                                     fre_unit.setText("GHz");
+                                                                     frequency_val.setText(fre_double.toString());
+
+                                                                 }
 
                                                              }
 
-//                                                             else if(length >=13)
-//                                                             {
-//                                                                 fre_double = Double.parseDouble(fre);
-//                                                                 fre_double= fre_double/1000000000;
-//                                                                 fre_unit.setText("GHz");
-//                                                                 frequency_val.setText(fre_double.toString());
+
 //
-//                                                             }
+                                                         } else {
+                                                             if (UnitOnItemSelectedListener.unit_value == "Hz") {
+                                                                 if (length == 1 || length == 2 || length == 3) {
+
+                                                                     fre = dialog_edidtext.getText().toString();
+                                                                     fre_unit.setText("Hz");
+                                                                     frequency_val.setText(fre.toString());
+                                                                 } else if (length == 4 || length == 5 || length == 6) {
+                                                                     fre_double = Double.parseDouble(fre);
+                                                                     fre_double = fre_double / 1000;
+                                                                     fre_unit.setText("kHz");
+                                                                     frequency_val.setText(fre_double.toString());
+
+                                                                 } else if (length == 7 || length == 8 || length == 9) {
+                                                                     fre_double = Double.parseDouble(fre);
+                                                                     fre_double = fre_double / 1000000;
+                                                                     fre_unit.setText("MHz");
+                                                                     frequency_val.setText(fre_double.toString());
+
+                                                                 } else if (length == 10 || length == 11 || length == 12) {
+                                                                     fre_double = Double.parseDouble(fre);
+                                                                     fre_double = fre_double / 1000000000;
+                                                                     fre_unit.setText("GHz");
+                                                                     frequency_val.setText(fre_double.toString());
+
+                                                                 }
 
 
-                                                         } else if (UnitOnItemSelectedListener.unit_value == "mHz") {
+                                                             } else if (UnitOnItemSelectedListener.unit_value == "mHz") {
 
-                                                             if (length == 1 || length == 2 || length == 3) {
+                                                                 if (length == 1 || length == 2 || length == 3) {
 
-                                                                 fre = dialog_edidtext.getText().toString();
-                                                                 fre_unit.setText("mHz");
-                                                                 frequency_val.setText(fre.toString());
-                                                             } else if (length == 4 || length == 5 || length == 6) {
-                                                                 fre_double = Double.parseDouble(fre);
-                                                                 fre_double = fre_double / 1000;
-                                                                 fre_unit.setText("Hz");
-                                                                 frequency_val.setText(fre_double.toString());
+                                                                     fre = dialog_edidtext.getText().toString();
+                                                                     fre_unit.setText("mHz");
+                                                                     frequency_val.setText(fre.toString());
+                                                                 } else if (length == 4 || length == 5 || length == 6) {
+                                                                     fre_double = Double.parseDouble(fre);
+                                                                     fre_double = fre_double / 1000;
+                                                                     fre_unit.setText("Hz");
+                                                                     frequency_val.setText(fre_double.toString());
 
-                                                             } else if (length == 7 || length == 8 || length == 9) {
-                                                                 fre_double = Double.parseDouble(fre);
-                                                                 fre_double = fre_double / 1000000;
-                                                                 fre_unit.setText("kHz");
-                                                                 frequency_val.setText(fre_double.toString());
+                                                                 } else if (length == 7 || length == 8 || length == 9) {
+                                                                     fre_double = Double.parseDouble(fre);
+                                                                     fre_double = fre_double / 1000000;
+                                                                     fre_unit.setText("kHz");
+                                                                     frequency_val.setText(fre_double.toString());
 
-                                                             } else if (length == 10 || length == 11 || length == 12) {
-                                                                 fre_double = Double.parseDouble(fre);
-                                                                 fre_double = fre_double / 1000000000;
-                                                                 fre_unit.setText("MHz");
-                                                                 frequency_val.setText(fre_double.toString());
+                                                                 } else if (length == 10 || length == 11 || length == 12) {
+                                                                     fre_double = Double.parseDouble(fre);
+                                                                     fre_double = fre_double / 1000000000;
+                                                                     fre_unit.setText("MHz");
+                                                                     frequency_val.setText(fre_double.toString());
 
-                                                             } else if (length >= 13) {
-                                                                 fre_double = Double.parseDouble(fre);
-                                                                 fre_double = fre_double / (Math.pow(10, 12));
-                                                                 fre_unit.setText("GHz");
-                                                                 frequency_val.setText(fre_double.toString());
+                                                                 } else if (length >= 13) {
+                                                                     fre_double = Double.parseDouble(fre);
+                                                                     fre_double = fre_double / (Math.pow(10, 12));
+                                                                     fre_unit.setText("GHz");
+                                                                     frequency_val.setText(fre_double.toString());
+
+                                                                 }
+
+
+                                                             } else if (UnitOnItemSelectedListener.unit_value == "μHz") {
+
+                                                                 if (length == 1 || length == 2 || length == 3) {
+
+                                                                     fre = dialog_edidtext.getText().toString();
+                                                                     fre_unit.setText("μHz");
+                                                                     frequency_val.setText(fre.toString());
+                                                                 } else if (length == 4 || length == 5 || length == 6) {
+                                                                     fre_double = Double.parseDouble(fre);
+                                                                     fre_double = fre_double / 1000;
+                                                                     fre_unit.setText("mHz");
+                                                                     frequency_val.setText(fre_double.toString());
+
+                                                                 } else if (length == 7 || length == 8 || length == 9) {
+                                                                     fre_double = Double.parseDouble(fre);
+                                                                     fre_double = fre_double / 1000000;
+                                                                     fre_unit.setText("Hz");
+                                                                     frequency_val.setText(fre_double.toString());
+
+                                                                 } else if (length == 10 || length == 11 || length == 12) {
+                                                                     fre_double = Double.parseDouble(fre);
+                                                                     fre_double = fre_double / 1000000000;
+                                                                     fre_unit.setText("kHz");
+                                                                     frequency_val.setText(fre_double.toString());
+
+                                                                 } else if (length >= 13 || length >= 14 || length >= 15) {
+                                                                     fre_double = Double.parseDouble(fre);
+                                                                     fre_double = fre_double / (Math.pow(10, 12));
+                                                                     fre_unit.setText("MHz");
+                                                                     frequency_val.setText(fre_double.toString());
+
+                                                                 } else if (length >= 16) {
+                                                                     fre_double = Double.parseDouble(fre);
+                                                                     fre_double = fre_double / (Math.pow(10, 15));
+                                                                     fre_unit.setText("GHz");
+                                                                     frequency_val.setText(fre_double.toString());
+
+                                                                 }
+
+
+                                                             } else if (UnitOnItemSelectedListener.unit_value == "kHz") {
+
+
+                                                                 if (length == 1 || length == 2 || length == 3) {
+
+                                                                     fre = dialog_edidtext.getText().toString();
+                                                                     fre_unit.setText("kHz");
+                                                                     frequency_val.setText(fre.toString());
+                                                                 } else if (length == 4 || length == 5 || length == 6) {
+                                                                     fre_double = Double.parseDouble(fre);
+                                                                     fre_double = fre_double / 1000;
+                                                                     fre_unit.setText("MHz");
+                                                                     frequency_val.setText(fre_double.toString());
+
+                                                                 } else if (length >= 7) {
+                                                                     fre_double = Double.parseDouble(fre);
+                                                                     fre_double = fre_double / 1000000;
+                                                                     fre_unit.setText("GHz");
+                                                                     frequency_val.setText(fre_double.toString());
+
+                                                                 }
+
+//
+
+
+                                                             } else if (UnitOnItemSelectedListener.unit_value == "MHz") {
+
+                                                                 if (length == 1 || length == 2 || length == 3) {
+
+                                                                     fre = dialog_edidtext.getText().toString();
+                                                                     fre_unit.setText("MHz");
+                                                                     frequency_val.setText(fre.toString());
+                                                                 } else if (length >= 4) {
+                                                                     fre_double = Double.parseDouble(fre);
+                                                                     fre_double = fre_double / 1000;
+                                                                     fre_unit.setText("GHz");
+                                                                     frequency_val.setText(fre_double.toString());
+
+                                                                 }
 
                                                              }
-
-
-                                                         } else if (UnitOnItemSelectedListener.unit_value == "μHz") {
-
-                                                             if (length == 1 || length == 2 || length == 3) {
-
-                                                                 fre = dialog_edidtext.getText().toString();
-                                                                 fre_unit.setText("μHz");
-                                                                 frequency_val.setText(fre.toString());
-                                                             } else if (length == 4 || length == 5 || length == 6) {
-                                                                 fre_double = Double.parseDouble(fre);
-                                                                 fre_double = fre_double / 1000;
-                                                                 fre_unit.setText("mHz");
-                                                                 frequency_val.setText(fre_double.toString());
-
-                                                             } else if (length == 7 || length == 8 || length == 9) {
-                                                                 fre_double = Double.parseDouble(fre);
-                                                                 fre_double = fre_double / 1000000;
-                                                                 fre_unit.setText("Hz");
-                                                                 frequency_val.setText(fre_double.toString());
-
-                                                             } else if (length == 10 || length == 11 || length == 12) {
-                                                                 fre_double = Double.parseDouble(fre);
-                                                                 fre_double = fre_double / 1000000000;
-                                                                 fre_unit.setText("kHz");
-                                                                 frequency_val.setText(fre_double.toString());
-
-                                                             } else if (length >= 13 || length >= 14 || length >= 15) {
-                                                                 fre_double = Double.parseDouble(fre);
-                                                                 fre_double = fre_double / (Math.pow(10, 12));
-                                                                 fre_unit.setText("MHz");
-                                                                 frequency_val.setText(fre_double.toString());
-
-                                                             } else if (length >= 16) {
-                                                                 fre_double = Double.parseDouble(fre);
-                                                                 fre_double = fre_double / (Math.pow(10, 15));
-                                                                 fre_unit.setText("GHz");
-                                                                 frequency_val.setText(fre_double.toString());
-
-                                                             }
-
-
-                                                         } else if (UnitOnItemSelectedListener.unit_value == "kHz") {
-
-
-                                                             if (length == 1 || length == 2 || length == 3) {
-
-                                                                 fre = dialog_edidtext.getText().toString();
-                                                                 fre_unit.setText("kHz");
-                                                                 frequency_val.setText(fre.toString());
-                                                             } else if (length == 4 || length == 5 || length == 6) {
-                                                                 fre_double = Double.parseDouble(fre);
-                                                                 fre_double = fre_double / 1000;
-                                                                 fre_unit.setText("MHz");
-                                                                 frequency_val.setText(fre_double.toString());
-
-                                                             } else if (length >= 7) {
-                                                                 fre_double = Double.parseDouble(fre);
-                                                                 fre_double = fre_double / 1000000;
-                                                                 fre_unit.setText("GHz");
-                                                                 frequency_val.setText(fre_double.toString());
-
-                                                             }
-
-//                                                             else if (  length == 12) {
-//                                                                 fre_double = Double.parseDouble(fre);
-//                                                                 fre_double = fre_double / 1000000000;
-//                                                                 fre_unit.setText("kHz");
-//                                                                 frequency_val.setText(fre_double.toString());
-//
-//                                                             } else if (length >= 13|| length >= 14||length >= 15) {
-//                                                                 fre_double = Double.parseDouble(fre);
-//                                                                 fre_double = fre_double / (Math.pow(10, 12));
-//                                                                 fre_unit.setText("MHz");
-//                                                                 frequency_val.setText(fre_double.toString());
-//
-//                                                             }
-//
-//                                                             else if (length >= 16) {
-//                                                                 fre_double = Double.parseDouble(fre);
-//                                                                 fre_double = fre_double / (Math.pow(10, 15));
-//                                                                 fre_unit.setText("GHz");
-//                                                                 frequency_val.setText(fre_double.toString());
-//
-//                                                             }
-
-
-                                                         } else if (UnitOnItemSelectedListener.unit_value == "MHz") {
-
-                                                             if (length == 1 || length == 2 || length == 3) {
-
-                                                                 fre = dialog_edidtext.getText().toString();
-                                                                 fre_unit.setText("MHz");
-                                                                 frequency_val.setText(fre.toString());
-                                                             } else if (length >= 4) {
-                                                                 fre_double = Double.parseDouble(fre);
-                                                                 fre_double = fre_double / 1000;
-                                                                 fre_unit.setText("GHz");
-                                                                 frequency_val.setText(fre_double.toString());
-
-                                                             }
-
                                                          }
+
                                                          //else if (unit_value == "s" || unit_value == "ms" || unit_value == "μs" || unit_value == "ns" || unit_value == "ps") {
 
 
@@ -453,9 +579,7 @@ public class Frequencyconverter extends AppCompatActivity {
 
         );
 
-        wavvelocity_rel.setOnClickListener(new View.OnClickListener()
-
-        {
+        wavvelocity_rel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -489,10 +613,154 @@ public class Frequencyconverter extends AppCompatActivity {
 
                         //fre = frequency_val.getText().toString();
                         //per = period_val.getText().toString();
-                        wavevelocity = wavvelocity_val.getText().toString();
-
+                        wavevelocity = dialog_edidtext.getText().toString();
 
                         //   wavevelocity = dialog_edidtext.getText().toString();
+
+
+                        int length = wavevelocity.length();
+                        if (UnitOnItemSelectedListener.unit_value == "m/s") {
+                            if (length == 1 || length == 2 || length == 3) {
+
+                                fre = dialog_edidtext.getText().toString();
+                                fre_unit.setText("Hz");
+                                frequency_val.setText(fre.toString());
+                            } else if (length == 4 || length == 5 || length == 6) {
+                                fre_double = Double.parseDouble(fre);
+                                fre_double = fre_double / 1000;
+                                fre_unit.setText("kHz");
+                                frequency_val.setText(fre_double.toString());
+
+                            } else if (length == 7 || length == 8 || length == 9) {
+                                fre_double = Double.parseDouble(fre);
+                                fre_double = fre_double / 1000000;
+                                fre_unit.setText("MHz");
+                                frequency_val.setText(fre_double.toString());
+
+                            } else if (length == 10 || length == 11 || length == 12) {
+                                fre_double = Double.parseDouble(fre);
+                                fre_double = fre_double / 1000000000;
+                                fre_unit.setText("GHz");
+                                frequency_val.setText(fre_double.toString());
+
+                            }
+
+
+                        } else if (UnitOnItemSelectedListener.unit_value == "mm/s") {
+
+                            if (length == 1 || length == 2 || length == 3) {
+
+                                fre = dialog_edidtext.getText().toString();
+                                fre_unit.setText("mHz");
+                                frequency_val.setText(fre.toString());
+                            } else if (length == 4 || length == 5 || length == 6) {
+                                fre_double = Double.parseDouble(fre);
+                                fre_double = fre_double / 1000;
+                                fre_unit.setText("Hz");
+                                frequency_val.setText(fre_double.toString());
+
+                            } else if (length == 7 || length == 8 || length == 9) {
+                                fre_double = Double.parseDouble(fre);
+                                fre_double = fre_double / 1000000;
+                                fre_unit.setText("kHz");
+                                frequency_val.setText(fre_double.toString());
+
+                            } else if (length == 10 || length == 11 || length == 12) {
+                                fre_double = Double.parseDouble(fre);
+                                fre_double = fre_double / 1000000000;
+                                fre_unit.setText("MHz");
+                                frequency_val.setText(fre_double.toString());
+
+                            } else if (length >= 13) {
+                                fre_double = Double.parseDouble(fre);
+                                fre_double = fre_double / (Math.pow(10, 12));
+                                fre_unit.setText("GHz");
+                                frequency_val.setText(fre_double.toString());
+
+                            }
+
+
+                        } else if (UnitOnItemSelectedListener.unit_value == "km/s") {
+
+                            if (length == 1 || length == 2 || length == 3) {
+
+                                fre = dialog_edidtext.getText().toString();
+                                fre_unit.setText("μHz");
+                                frequency_val.setText(fre.toString());
+                            } else if (length == 4 || length == 5 || length == 6) {
+                                fre_double = Double.parseDouble(fre);
+                                fre_double = fre_double / 1000;
+                                fre_unit.setText("mHz");
+                                frequency_val.setText(fre_double.toString());
+
+                            } else if (length == 7 || length == 8 || length == 9) {
+                                fre_double = Double.parseDouble(fre);
+                                fre_double = fre_double / 1000000;
+                                fre_unit.setText("Hz");
+                                frequency_val.setText(fre_double.toString());
+
+                            } else if (length == 10 || length == 11 || length == 12) {
+                                fre_double = Double.parseDouble(fre);
+                                fre_double = fre_double / 1000000000;
+                                fre_unit.setText("kHz");
+                                frequency_val.setText(fre_double.toString());
+
+                            } else if (length >= 13 || length >= 14 || length >= 15) {
+                                fre_double = Double.parseDouble(fre);
+                                fre_double = fre_double / (Math.pow(10, 12));
+                                fre_unit.setText("MHz");
+                                frequency_val.setText(fre_double.toString());
+
+                            } else if (length >= 16) {
+                                fre_double = Double.parseDouble(fre);
+                                fre_double = fre_double / (Math.pow(10, 15));
+                                fre_unit.setText("GHz");
+                                frequency_val.setText(fre_double.toString());
+
+                            }
+
+
+                        } else if (UnitOnItemSelectedListener.unit_value == "Mm/s") {
+
+
+                            if (length == 1 || length == 2 || length == 3) {
+
+                                fre = dialog_edidtext.getText().toString();
+                                fre_unit.setText("kHz");
+                                frequency_val.setText(fre.toString());
+                            } else if (length == 4 || length == 5 || length == 6) {
+                                fre_double = Double.parseDouble(fre);
+                                fre_double = fre_double / 1000;
+                                fre_unit.setText("MHz");
+                                frequency_val.setText(fre_double.toString());
+
+                            } else if (length >= 7) {
+                                fre_double = Double.parseDouble(fre);
+                                fre_double = fre_double / 1000000;
+                                fre_unit.setText("GHz");
+                                frequency_val.setText(fre_double.toString());
+
+                            }
+
+//
+
+
+                        } else if (UnitOnItemSelectedListener.unit_value == "µm/s") {
+
+                            if (length == 1 || length == 2 || length == 3) {
+
+                                fre = dialog_edidtext.getText().toString();
+                                fre_unit.setText("MHz");
+                                frequency_val.setText(fre.toString());
+                            } else if (length >= 4) {
+                                fre_double = Double.parseDouble(fre);
+                                fre_double = fre_double / 1000;
+                                fre_unit.setText("GHz");
+                                frequency_val.setText(fre_double.toString());
+
+                            }
+
+                        }
 
 
                         // fre_double = Double.parseDouble(fre);
@@ -604,7 +872,7 @@ public class Frequencyconverter extends AppCompatActivity {
 
                         //fre = frequency_val.getText().toString();
 
-                        per = period_val.getText().toString();
+                        per = dialog_edidtext.getText().toString();
 
                         // per = dialog_edidtext.getText().toString();
 
@@ -729,7 +997,7 @@ public class Frequencyconverter extends AppCompatActivity {
                         //wavevelocity = wavvelocity_val.getText().toString();
 
 
-                        wavelength = wavelength_val.getText().toString();
+                        wavelength = dialog_edidtext.getText().toString();
 
                         // wavelength = dialog_edidtext.getText().toString();
 
