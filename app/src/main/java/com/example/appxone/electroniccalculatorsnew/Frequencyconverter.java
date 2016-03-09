@@ -42,17 +42,17 @@ public class Frequencyconverter extends AppCompatActivity {
     TextView dialog_edidtext, dialog_header;
     Button diaog_cancel_button, dialog_ok_button;
     Dialog dialog_custom;
-  //  TextView frequency_val, period_val;
-   public static TextView  wavvelocity_val,frequency_val, period_val;
-  public static   TextView  wavelength_val;
+    //  TextView frequency_val, period_val;
+    public static TextView wavvelocity_val, frequency_val, period_val;
+    public static TextView wavelength_val;
 
     RelativeLayout frequency_rel, period_rel, wavvelocity_rel, wavelength_rel;
     TextView frq_unit, period_unit, wavevelocity_unit, wavelength_unit;
-  public static   TextView lamda2_value, lamda4_value, lamda8_value;
+    public static TextView lamda2_value, lamda4_value, lamda8_value;
     TextView lamda2_unit, lamda4_unit, lamda8_unit;
 
     String fre, per, wavelength;
-public  static  String  wavevelocity;
+    public static String wavevelocity;
     Double OUTPUT_PERIOD, OUTPUT_WAVELENGTH, OUTPUT_fre;
     Typeface typeface;
     Double fre_double, per_double, wavevelocity_double, wavelength_double;
@@ -66,7 +66,7 @@ public  static  String  wavevelocity;
     String publishteId, ad_Id;
     int check;
 
-    private Spinner spinner1;
+    private Spinner spinner1, unit_convertion;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -140,7 +140,8 @@ public  static  String  wavevelocity;
         dialog_edidtext = (TextView) view.findViewById(R.id.editText);
         diaog_cancel_button = (Button) view.findViewById(R.id.cancel_button);
         dialog_ok_button = (Button) view.findViewById(R.id.ok_button);
-        unit = (TextView) view.findViewById(R.id.unit);
+        //  unit = (TextView) view.findViewById(R.id.unit);
+        unit_convertion = (Spinner) view.findViewById(R.id.unit_conversion);
 
 
         dialog_header.setTypeface(typeface);
@@ -152,10 +153,28 @@ public  static  String  wavevelocity;
 
         addListenerOnSpinnerItemSelection();
 
+        addListenerOnSpinnerItemSelectionUnit();
+
         frequency_rel.setOnClickListener(new View.OnClickListener() {
                                              @Override
                                              public void onClick(View v) {
-                                                 unit.setText("hz");
+
+                                                 // spinner1 = (Spinner) findViewById(R.id.spinner_quantity);
+                                                 List<String> list = new ArrayList<String>();
+                                                 list.add("Hz");
+                                                 list.add("µHz");
+                                                 list.add("mHz");
+
+
+                                                 list.add("kHz");
+                                                 list.add("MHz");
+                                                 ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(Frequencyconverter.this
+                                                         , android.R.layout.simple_spinner_item, list);
+                                                 dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                                                 unit_convertion.setAdapter(dataAdapter);
+
+
+                                                 // unit.setText("hz");
                                                  dialog_header.setText("Insert the value of Frequency");
                                                  dialog_custom.show();
                                                  diaog_cancel_button.setOnClickListener(new View.OnClickListener() {
@@ -255,7 +274,19 @@ public  static  String  wavevelocity;
             @Override
             public void onClick(View v) {
 
-                unit.setText("m/s");
+
+                List<String> list = new ArrayList<String>();
+                list.add("m/s");
+                list.add("mm/s");
+                list.add("km/s");
+
+                list.add("Mm/s");
+                list.add("µm/s");
+                ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(Frequencyconverter.this
+                        , android.R.layout.simple_spinner_item, list);
+                dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                unit_convertion.setAdapter(dataAdapter);
+                //  unit.setText("m/s");
                 dialog_header.setText("Insert the value of wave Velocity");
                 dialog_custom.show();
                 diaog_cancel_button.setOnClickListener(new View.OnClickListener() {
@@ -351,7 +382,22 @@ public  static  String  wavevelocity;
             @Override
             public void onClick(View v) {
 
-                unit.setText("s");
+
+                List<String> list = new ArrayList<String>();
+                list.add("s");
+                list.add("ps");
+                list.add("ns");
+                list.add("µs");
+
+                list.add("ms");
+
+                ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(Frequencyconverter.this
+                        , android.R.layout.simple_spinner_item, list);
+                dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                unit_convertion.setAdapter(dataAdapter);
+
+
+                //     unit.setText("s");
                 dialog_header.setText("Insert the value of Period");
                 dialog_custom.show();
                 diaog_cancel_button.setOnClickListener(new View.OnClickListener() {
@@ -446,7 +492,24 @@ public  static  String  wavevelocity;
         wavelength_rel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                unit.setText("m");
+
+
+                List<String> list = new ArrayList<String>();
+                list.add("m");
+                list.add("mm");
+                list.add("µm");
+
+                list.add("km");
+                list.add("Mm");
+                ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(Frequencyconverter.this
+                        , android.R.layout.simple_spinner_item, list);
+                dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                unit_convertion.setAdapter(dataAdapter);
+
+
+                // unit.setText("m");
+
+
                 dialog_header.setText("Insert the value of Wavelength");
                 dialog_custom.show();
                 diaog_cancel_button.setOnClickListener(new View.OnClickListener() {
@@ -576,6 +639,7 @@ public  static  String  wavevelocity;
         dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner1.setAdapter(dataAdapter);
 
+
     }
 
     public void addListenerOnSpinnerItemSelection() {
@@ -585,9 +649,7 @@ public  static  String  wavevelocity;
 //                "OnItemSelectedListener : " + CustomOnItemSelectedListener.values+"",
 //                Toast.LENGTH_SHORT).show();
 
-       // wavvelocity_val.setText(String.valueOf(CustomOnItemSelectedListener.values));
-
-
+        // wavvelocity_val.setText(String.valueOf(CustomOnItemSelectedListener.values));
 
 
 //
@@ -602,14 +664,16 @@ public  static  String  wavevelocity;
 //        wavelength_val.setText(format.format(OUTPUT_WAVELENGTH).toString());
 
 
-
-
-
 //        if (format.format(OUTPUT_WAVELENGTH).toString().charAt(0) == '.') {
 //
 //            wavelength_val.setText("0" + format.format(OUTPUT_WAVELENGTH).toString());
 //        } else {
-            //wavelength_val.setText(format.format(OUTPUT_WAVELENGTH).toString());
+        //wavelength_val.setText(format.format(OUTPUT_WAVELENGTH).toString());
         //}
+    }
+
+
+    public void addListenerOnSpinnerItemSelectionUnit() {
+        unit_convertion.setOnItemSelectedListener(new UnitOnItemSelectedListener());
     }
 }
