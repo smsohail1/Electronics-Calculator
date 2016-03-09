@@ -49,7 +49,7 @@ public class Frequencyconverter extends AppCompatActivity {
     RelativeLayout frequency_rel, period_rel, wavvelocity_rel, wavelength_rel;
     TextView frq_unit, period_unit, wavevelocity_unit, wavelength_unit;
     public static TextView lamda2_value, lamda4_value, lamda8_value;
-    TextView lamda2_unit, lamda4_unit, lamda8_unit;
+    TextView lamda2_unit, lamda4_unit, lamda8_unit, fre_unit;
 
     String fre, per, wavelength;
     public static String wavevelocity;
@@ -66,7 +66,8 @@ public class Frequencyconverter extends AppCompatActivity {
     String publishteId, ad_Id;
     int check;
 
-    private Spinner spinner1, unit_convertion;
+    private Spinner spinner1;
+    public static Spinner unit_convertion;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -126,6 +127,7 @@ public class Frequencyconverter extends AppCompatActivity {
 
 
         frequency_val = (TextView) findViewById(R.id.gain_value);
+        fre_unit = (TextView) findViewById(R.id.fre_unit);
 
         period_val = (TextView) findViewById(R.id.power_value);
 
@@ -168,6 +170,7 @@ public class Frequencyconverter extends AppCompatActivity {
 
                                                  list.add("kHz");
                                                  list.add("MHz");
+                                                 list.add("GHz");
                                                  ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(Frequencyconverter.this
                                                          , android.R.layout.simple_spinner_item, list);
                                                  dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -190,7 +193,96 @@ public class Frequencyconverter extends AppCompatActivity {
                                                      public void onClick(View v) {
 
 
-                                                         fre = dialog_edidtext.getText().toString();
+                                                         // fre = dialog_edidtext.getText().toString();
+
+                                                         fre = frequency_val.getText().toString();
+                                                         int length = fre.length();
+                                                         if (UnitOnItemSelectedListener.unit_value == "Hz") {
+                                                             if (length == 1 || length == 2 || length == 3) {
+
+                                                                 fre = dialog_edidtext.getText().toString();
+                                                                 fre_unit.setText("Hz");
+                                                                 frequency_val.setText(fre.toString());
+                                                             } else if (length == 4 || length == 5 || length == 6) {
+                                                                 fre_double = Double.parseDouble(fre);
+                                                                 fre_double = fre_double / 1000;
+                                                                 fre_unit.setText("kHz");
+                                                                 frequency_val.setText(fre_double.toString());
+
+                                                             } else if (length == 7 || length == 8 || length == 9) {
+                                                                 fre_double = Double.parseDouble(fre);
+                                                                 fre_double = fre_double / 1000000;
+                                                                 fre_unit.setText("MHz");
+                                                                 frequency_val.setText(fre_double.toString());
+
+                                                             } else if (length == 10 || length == 11 || length == 12) {
+                                                                 fre_double = Double.parseDouble(fre);
+                                                                 fre_double = fre_double / 1000000000;
+                                                                 fre_unit.setText("GHz");
+                                                                 frequency_val.setText(fre_double.toString());
+
+                                                             }
+
+//                                                             else if(length >=13)
+//                                                             {
+//                                                                 fre_double = Double.parseDouble(fre);
+//                                                                 fre_double= fre_double/1000000000;
+//                                                                 fre_unit.setText("GHz");
+//                                                                 frequency_val.setText(fre_double.toString());
+//
+//                                                             }
+
+
+                                                         } else if (UnitOnItemSelectedListener.unit_value == "mHz") {
+
+                                                             if (length == 1 || length == 2 || length == 3) {
+
+                                                                 fre = dialog_edidtext.getText().toString();
+                                                                 fre_unit.setText("mHz");
+                                                                 frequency_val.setText(fre.toString());
+                                                             } else if (length == 4 || length == 5 || length == 6) {
+                                                                 fre_double = Double.parseDouble(fre);
+                                                                 fre_double = fre_double / 1000;
+                                                                 fre_unit.setText("Hz");
+                                                                 frequency_val.setText(fre_double.toString());
+
+                                                             } else if (length == 7 || length == 8 || length == 9) {
+                                                                 fre_double = Double.parseDouble(fre);
+                                                                 fre_double = fre_double / 1000000;
+                                                                 fre_unit.setText("kHz");
+                                                                 frequency_val.setText(fre_double.toString());
+
+                                                             } else if (length == 10 || length == 11 || length == 12) {
+                                                                 fre_double = Double.parseDouble(fre);
+                                                                 fre_double = fre_double / 1000000000;
+                                                                 fre_unit.setText("MHz");
+                                                                 frequency_val.setText(fre_double.toString());
+
+                                                             } else if (length >= 13) {
+                                                                 fre_double = Double.parseDouble(fre);
+                                                                 fre_double = fre_double / (Math.pow(10, 12));
+                                                                 fre_unit.setText("GHz");
+                                                                 frequency_val.setText(fre_double.toString());
+
+                                                             }
+
+
+                                                         } else if (UnitOnItemSelectedListener.unit_value == "μHz") {
+
+                                                         } else if (UnitOnItemSelectedListener.unit_value == "kHz") {
+
+                                                         } else if (UnitOnItemSelectedListener.unit_value == "MHz") {
+
+
+                                                         }
+                                                         //else if (unit_value == "s" || unit_value == "ms" || unit_value == "μs" || unit_value == "ns" || unit_value == "ps") {
+
+
+//                                                         if (fre.length()==3 ||)
+//                                                         {
+//
+//                                                         }
+
                                                          // per = period_val.getText().toString();
                                                          check = 0;
                                                          for (int i = 0; i < fre.length(); i++) {
@@ -304,7 +396,12 @@ public class Frequencyconverter extends AppCompatActivity {
 
                         //fre = frequency_val.getText().toString();
                         //per = period_val.getText().toString();
-                        wavevelocity = dialog_edidtext.getText().toString();
+                        wavevelocity = wavvelocity_val.getText().toString();
+
+
+                        //   wavevelocity = dialog_edidtext.getText().toString();
+
+
                         // fre_double = Double.parseDouble(fre);
                         //per_double = Double.parseDouble(per);
                         //wavevelocity_double = Double.parseDouble(wavevelocity);
@@ -413,7 +510,12 @@ public class Frequencyconverter extends AppCompatActivity {
                     public void onClick(View v) {
 
                         //fre = frequency_val.getText().toString();
-                        per = dialog_edidtext.getText().toString();
+
+                        per = period_val.getText().toString();
+
+                        // per = dialog_edidtext.getText().toString();
+
+
                         // wavevelocity = wavvelocity_val.getText().toString();
                         //wavelength = wavelength_val.getText().toString();
 
@@ -532,7 +634,12 @@ public class Frequencyconverter extends AppCompatActivity {
                         //fre = frequency_val.getText().toString();
                         //per = period_val.getText().toString();
                         //wavevelocity = wavvelocity_val.getText().toString();
-                        wavelength = dialog_edidtext.getText().toString();
+
+
+                        wavelength = wavelength_val.getText().toString();
+
+                        // wavelength = dialog_edidtext.getText().toString();
+
 
                         //fre_double = Double.parseDouble(fre);
                         //per_double = Double.parseDouble(per);
@@ -675,5 +782,6 @@ public class Frequencyconverter extends AppCompatActivity {
 
     public void addListenerOnSpinnerItemSelectionUnit() {
         unit_convertion.setOnItemSelectedListener(new UnitOnItemSelectedListener());
+
     }
 }
