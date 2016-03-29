@@ -88,6 +88,7 @@
                         android:textColor="#ffffff" />
 
                     <TextView
+                        android:layout_marginLeft="2dp"
                         android:id="@+id/fre_unit"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -141,6 +142,7 @@
                         android:textColor="#ffffff" />
 
                     <TextView
+                        android:layout_marginLeft="2dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_toRightOf="@+id/power_value"
@@ -214,6 +216,8 @@
                         android:textColor="#ffffff" />
 
                     <TextView
+                        android:layout_marginLeft="2dp"
+                        android:id="@+id/wavevelocity_unit"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_toRightOf="@+id/wave_value"
@@ -277,10 +281,11 @@
 
 
                 <TextView
+                    android:layout_marginLeft="2dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_toRightOf="@+id/wavelength_value"
-
+android:id="@+id/wavelength_unit"
                     android:text=" m"
 
                     android:textColor="#ffffff" />
