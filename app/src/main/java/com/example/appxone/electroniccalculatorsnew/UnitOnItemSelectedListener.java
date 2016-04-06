@@ -17,26 +17,26 @@ public class UnitOnItemSelectedListener implements AdapterView.OnItemSelectedLis
         Toast.makeText(parent.getContext(),
                 "OnItemSelectedListener : " + parent.getItemAtPosition(position).toString(),
                 Toast.LENGTH_SHORT).show();
+//
+//        unit_vl=     parent.getItemAtPosition(position).toString();
+//        unit_value = Frequencyconverter.unit_convertion.getSelectedItem().toString();
+//
+//        if (unit_value == "Hz" || unit_value == "GHz" || unit_value == "μHz" || unit_value == "kHz" || unit_value == "MHz") {
+//
+//
+//        } else if (unit_value == "s" || unit_value == "ms" || unit_value == "μs" || unit_value == "ns" || unit_value == "ps") {
+//
+//        } else if (unit_value == "m/s" || unit_value == "mm/s" || unit_value == "km/s" || unit_value == "Mm/s" || unit_value == "μ/s") {
+//
+//        }
+//
+//
+//        else if (unit_value == "m" || unit_value == "mm" || unit_value == "μm" || unit_value == "km" || unit_value == "Mm") {
+//
+//        }
+//    }
 
-        unit_vl=     parent.getItemAtPosition(position).toString();
-        unit_value = Frequencyconverter.unit_convertion.getSelectedItem().toString();
-
-        if (unit_value == "Hz" || unit_value == "GHz" || unit_value == "μHz" || unit_value == "kHz" || unit_value == "MHz") {
-
-
-        } else if (unit_value == "s" || unit_value == "ms" || unit_value == "μs" || unit_value == "ns" || unit_value == "ps") {
-
-        } else if (unit_value == "m/s" || unit_value == "mm/s" || unit_value == "km/s" || unit_value == "Mm/s" || unit_value == "μ/s") {
-
-        }
-
-
-        else if (unit_value == "m" || unit_value == "mm" || unit_value == "μm" || unit_value == "km" || unit_value == "Mm") {
-
-        }
     }
-
-
     @Override
     public void onNothingSelected(AdapterView<?> parent) {
 

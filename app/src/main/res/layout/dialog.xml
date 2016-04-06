@@ -18,15 +18,15 @@
             android:textColor="#000000" />
 
         <RelativeLayout
-            android:gravity="center_horizontal"
             android:id="@+id/user_input"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/header"
-            android:layout_marginTop="5dp">
+            android:layout_marginTop="5dp"
+            android:gravity="center_horizontal">
 
             <EditText
-                
+
                 android:id="@+id/editText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -35,15 +35,16 @@
                 android:ems="10"
                 android:inputType="numberDecimal" />
 
-            <Spinner
+            <TextView
                 android:id="@+id/unit_conversion"
-            android:layout_width="80dp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:layout_marginRight="5dp">
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
 
-            </Spinner>
+                android:layout_marginRight="5dp">
+
+            </TextView>
 
         </RelativeLayout>
 

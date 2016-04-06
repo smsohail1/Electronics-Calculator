@@ -1,0 +1,436 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <RelativeLayout
+
+
+        android:id="@+id/header_delta"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/header_bg">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="5dp"
+            android:text="Y-Δ Transformation"
+            android:textColor="#ffffff"
+            android:textSize="25sp" />
+
+    </RelativeLayout>
+<RelativeLayout
+
+    android:layout_width="fill_parent"
+    android:layout_centerInParent="true"
+    android:layout_height="wrap_content">
+    <RelativeLayout
+        android:id="@+id/ra_rb_rc"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <RelativeLayout
+
+            android:id="@+id/top"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:id="@+id/gain_rel_rb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:background="#34495e"
+                android:paddingBottom="10dp"
+                android:paddingLeft="25dp"
+                android:paddingRight="25dp"
+                android:paddingTop="10dp">
+
+                <TextView
+
+                    android:id="@+id/gAIN_level_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:text="Rb"
+                    android:textColor="#ffffff"
+
+                    />
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_below="@+id/gAIN_level_text"
+                    android:layout_centerInParent="true">
+
+                    <TextView
+                        android:id="@+id/gain_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:text="100"
+
+                        android:textColor="#ffffff" />
+
+                    <TextView
+                        android:id="@+id/fre_unit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="2dp"
+                        android:layout_toRightOf="@+id/gain_value"
+
+                        android:text=" Ω"
+
+                        android:textColor="#ffffff" />
+
+                </RelativeLayout>
+
+
+            </RelativeLayout>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/ic_launcher" />
+
+            <RelativeLayout
+                android:id="@+id/gain_rel_ra"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="5dp"
+                android:background="#34495e"
+                android:paddingBottom="10dp"
+                android:paddingLeft="25dp"
+                android:paddingRight="25dp"
+                android:paddingTop="10dp">
+
+                <TextView
+
+                    android:id="@+id/gAIN_level_text_ra"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:text="Ra"
+                    android:textColor="#ffffff"
+
+                    />
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_below="@+id/gAIN_level_text_ra"
+                    android:layout_centerInParent="true">
+
+                    <TextView
+                        android:id="@+id/gain_value_ra"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:text="100"
+
+                        android:textColor="#ffffff" />
+
+                    <TextView
+                        android:id="@+id/fre_unit_ra"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="2dp"
+                        android:layout_toRightOf="@+id/gain_value_ra"
+
+                        android:text=" Ω"
+
+                        android:textColor="#ffffff" />
+
+                </RelativeLayout>
+
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/top"
+            android:gravity="center">
+
+
+            <RelativeLayout
+                android:id="@+id/gain_rel_rc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:background="#34495e"
+                android:paddingBottom="10dp"
+                android:paddingLeft="25dp"
+                android:paddingRight="25dp"
+                android:paddingTop="10dp">
+
+                <TextView
+
+                    android:id="@+id/gAIN_level_text_rc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:text="Rc"
+                    android:textColor="#ffffff"
+
+                    />
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_below="@+id/gAIN_level_text_rc"
+                    android:layout_centerInParent="true">
+
+                    <TextView
+                        android:id="@+id/gain_value_rc"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:text="100"
+
+                        android:textColor="#ffffff" />
+
+                    <TextView
+                        android:id="@+id/fre_unit_rc"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="2dp"
+                        android:layout_toRightOf="@+id/gain_value_rc"
+
+                        android:text=" Ω"
+
+                        android:textColor="#ffffff" />
+
+                </RelativeLayout>
+
+
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+android:layout_marginTop="5dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ra_rb_rc">
+
+        <RelativeLayout
+
+            android:id="@+id/mid"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:id="@+id/gain_rel_r1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:background="#34495e"
+                android:paddingBottom="10dp"
+                android:paddingLeft="25dp"
+                android:paddingRight="25dp"
+                android:paddingTop="10dp">
+
+                <TextView
+
+                    android:id="@+id/gAIN_level_text_r1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:text="R1"
+                    android:textColor="#ffffff"
+
+                    />
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_below="@+id/gAIN_level_text_r1"
+                    android:layout_centerInParent="true">
+
+                    <TextView
+                        android:id="@+id/gain_value_r1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:text="100"
+
+                        android:textColor="#ffffff" />
+
+                    <TextView
+                        android:id="@+id/fre_unit_r1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="2dp"
+                        android:layout_toRightOf="@+id/gain_value_r1"
+
+                        android:text=" Ω"
+
+                        android:textColor="#ffffff" />
+
+                </RelativeLayout>
+
+
+            </RelativeLayout>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/ic_launcher" />
+
+            <RelativeLayout
+                android:id="@+id/gain_rel_ra_r3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="5dp"
+                android:background="#34495e"
+                android:paddingBottom="10dp"
+                android:paddingLeft="25dp"
+                android:paddingRight="25dp"
+                android:paddingTop="10dp">
+
+                <TextView
+
+                    android:id="@+id/gAIN_level_text_ra_r3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:text="R3"
+                    android:textColor="#ffffff"
+
+                    />
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_below="@+id/gAIN_level_text_ra_r3"
+                    android:layout_centerInParent="true">
+
+                    <TextView
+                        android:id="@+id/gain_value_ra_r3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:text="100"
+
+                        android:textColor="#ffffff" />
+
+                    <TextView
+                        android:id="@+id/fre_unit_ra_r3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="2dp"
+                        android:layout_toRightOf="@+id/gain_value_ra_r3"
+
+                        android:text=" Ω"
+
+                        android:textColor="#ffffff" />
+
+                </RelativeLayout>
+
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/mid"
+            android:gravity="center">
+
+
+            <RelativeLayout
+                android:id="@+id/gain_rel_rc_r2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:background="#34495e"
+                android:paddingBottom="10dp"
+                android:paddingLeft="25dp"
+                android:paddingRight="25dp"
+                android:paddingTop="10dp">
+
+                <TextView
+
+                    android:id="@+id/gAIN_level_text_rc_r2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:text="R2"
+                    android:textColor="#ffffff"
+
+                    />
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_below="@+id/gAIN_level_text_rc_r2"
+                    android:layout_centerInParent="true">
+
+                    <TextView
+                        android:id="@+id/gain_value_rc_r2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:text="100"
+
+                        android:textColor="#ffffff" />
+
+                    <TextView
+                        android:id="@+id/fre_unit_rc_r2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="2dp"
+                        android:layout_toRightOf="@+id/gain_value_rc_r2"
+
+                        android:text=" Ω"
+
+                        android:textColor="#ffffff" />
+
+                </RelativeLayout>
+
+
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+    </RelativeLayout>
+</RelativeLayout>
+
+</RelativeLayout>

@@ -80,6 +80,12 @@
                     android:layout_marginLeft="5dp"
                     android:layout_toRightOf="@+id/total"
                     android:text="7.5" />
+                <TextView
+                    android:id="@+id/unit_serial"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/series_total"
+                    android:text=" Ω" />
             </RelativeLayout>
         </RelativeLayout>
 
@@ -134,7 +140,13 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_toRightOf="@+id/total_parallel"
-                    android:text="7.5Ω" />
+                    android:text="7.5" />
+                <TextView
+                    android:id="@+id/unit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/parallel_total"
+                    android:text=" Ω" />
             </RelativeLayout>
         </RelativeLayout>
     </RelativeLayout>

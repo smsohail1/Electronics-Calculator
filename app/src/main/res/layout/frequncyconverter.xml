@@ -88,10 +88,10 @@
                         android:textColor="#ffffff" />
 
                     <TextView
-                        android:layout_marginLeft="2dp"
                         android:id="@+id/fre_unit"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginLeft="2dp"
                         android:layout_toRightOf="@+id/gain_value"
 
                         android:text=" Hz"
@@ -142,10 +142,10 @@
                         android:textColor="#ffffff" />
 
                     <TextView
-                        android:id="@+id/period_unit"
-                        android:layout_marginLeft="2dp"
+                        android:id="@+id/period_val"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginLeft="2dp"
                         android:layout_toRightOf="@+id/power_value"
 
                         android:text=" s"
@@ -217,10 +217,10 @@
                         android:textColor="#ffffff" />
 
                     <TextView
-                        android:layout_marginLeft="2dp"
                         android:id="@+id/wavevelocity_unit"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginLeft="2dp"
                         android:layout_toRightOf="@+id/wave_value"
 
                         android:text=" m/s"
@@ -282,11 +282,11 @@
 
 
                 <TextView
-                    android:layout_marginLeft="2dp"
+                    android:id="@+id/wavelength_unit"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginLeft="2dp"
                     android:layout_toRightOf="@+id/wavelength_value"
-android:id="@+id/wavelength_unit"
                     android:text=" m"
 
                     android:textColor="#ffffff" />
@@ -296,111 +296,127 @@ android:id="@+id/wavelength_unit"
 
 
         <RelativeLayout
+
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/wavelength_rel"
             android:layout_marginTop="10dp"
             android:gravity="center_horizontal">
 
+            <RelativeLayout
+                android:id="@+id/lamdabyy2"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
 
-            <TextView
-                android:id="@+id/lamdaby2"
-                android:layout_width="wrap_content"
+                <TextView
+                    android:id="@+id/lamdaby2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:text="λ/2 = "
+
+                    android:textColor="#000000" />
+
+
+                <TextView
+                    android:id="@+id/lamda2_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/lamdaby2"
+
+                    android:text="171.5"
+
+                    android:textColor="#000000" />
+
+                <TextView
+                    android:id="@+id/mid_desc_unit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/lamda2_value"
+
+
+                    android:text=" m"
+
+                    android:textColor="#000000" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/lamdaby4"
+                android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
+                android:layout_below="@+id/lamdabyy2">
 
-                android:text="λ/2 = "
+                <TextView
+                    android:id="@+id/mid_desc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
 
-                android:textColor="#000000" />
+
+                    android:text="- λ/4 = "
+
+                    android:textColor="#000000" />
 
 
-            <TextView
-                android:id="@+id/lamda2_value"
-                android:layout_width="wrap_content"
+                <TextView
+                    android:id="@+id/lamda4_value_desc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/mid_desc"
+
+                    android:text="8.57"
+
+                    android:textColor="#000000" />
+
+                <TextView
+                    android:id="@+id/mid_unit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/lamda4_value_desc"
+
+
+                    android:text=" m"
+
+                    android:textColor="#000000" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_toRightOf="@+id/lamdaby2"
+                android:layout_below="@+id/lamdaby4">
 
-                android:text="171.5"
-
-                android:textColor="#000000" />
-
-            <TextView
-                android:id="@+id/mid_desc_unit"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_toRightOf="@+id/lamda2_value"
+                <TextView
+                    android:id="@+id/_desc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
 
 
-                android:text=" m"
+                    android:text=" - λ/8 = "
 
-                android:textColor="#000000" />
-
-            <TextView
-                android:id="@+id/mid_desc"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_toRightOf="@+id/mid_desc_unit"
+                    android:textColor="#000000" />
 
 
-                android:text=" - λ/4 = "
+                <TextView
+                    android:id="@+id/lamda8_value_desc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/_desc"
 
-                android:textColor="#000000" />
+                    android:text="4.288"
 
+                    android:textColor="#000000" />
 
-            <TextView
-                android:id="@+id/lamda4_value_desc"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_toRightOf="@+id/mid_desc"
-
-                android:text="8.57"
-
-                android:textColor="#000000" />
-
-            <TextView
-                android:id="@+id/mid_unit"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_toRightOf="@+id/lamda4_value_desc"
+                <TextView
+                    android:id="@+id/right_unit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/lamda8_value_desc"
 
 
-                android:text=" m"
+                    android:text=" m"
 
-                android:textColor="#000000" />
+                    android:textColor="#000000" />
 
-
-            <TextView
-                android:id="@+id/_desc"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_toRightOf="@+id/mid_unit"
-
-
-                android:text=" - λ/8 = "
-
-                android:textColor="#000000" />
-
-
-            <TextView
-                android:id="@+id/lamda8_value_desc"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_toRightOf="@+id/_desc"
-
-                android:text="4.288"
-
-                android:textColor="#000000" />
-
-            <TextView
-                android:id="@+id/right_unit"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_toRightOf="@+id/lamda8_value_desc"
-
-
-                android:text=" m"
-
-                android:textColor="#000000" />
-
+            </RelativeLayout>
         </RelativeLayout>
 
 
