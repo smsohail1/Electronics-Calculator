@@ -22,7 +22,7 @@ public class Ydelta extends ActionBarActivity {
     String r1_value, r2_value, r3_value;
     Double r1_double_value, r2_double_value, r3_double_value;
     Dialog dialog_custom;
-    TextView dialog_header, dialog_edidtext;
+    TextView dialog_header, dialog_edidtext,unit_convertion;
     Button diaog_cancel_button, dialog_ok_button;
     String ra_value, rb_value, rc_value;
     Double ra_double_value, rb_double_value, rc_double_value;
@@ -35,7 +35,7 @@ public class Ydelta extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.y_delta);
-
+getSupportActionBar().hide();
         t = Toast.makeText(Ydelta.this, "Invalid Digit", Toast.LENGTH_SHORT);
 
         ra = (TextView) findViewById(R.id.gain_value_ra);
@@ -68,9 +68,9 @@ public class Ydelta extends ActionBarActivity {
         diaog_cancel_button = (Button) view.findViewById(R.id.cancel_button);
         dialog_ok_button = (Button) view.findViewById(R.id.ok_button);
         //  unit = (TextView) view.findViewById(R.id.unit);
-        // unit_convertion = (TextView) view.findViewById(R.id.unit_conversion);
+         unit_convertion = (TextView) view.findViewById(R.id.unit_conversion);
 
-
+        unit_convertion.setText("Ω");
         dialog_custom = new Dialog(Ydelta.this);
         dialog_custom.setCancelable(true);
         dialog_custom.setContentView(view);
@@ -151,7 +151,9 @@ public class Ydelta extends ActionBarActivity {
 //
 //                            rb.setText(format.format(output_divide).toString());
                         }
+                        dialog_custom.dismiss();
                     }
+
                 });
 
 
@@ -234,6 +236,7 @@ public class Ydelta extends ActionBarActivity {
 //
 //                            rb.setText(format.format(output_divide).toString());
                         }
+                        dialog_custom.dismiss();
                     }
                 });
 
@@ -327,6 +330,7 @@ public class Ydelta extends ActionBarActivity {
 //
 //                            rb.setText(format.format(output_divide).toString());
                         }
+                        dialog_custom.dismiss();
                     }
                 });
 //                r1_value = r1.getText().toString();
@@ -416,7 +420,9 @@ public class Ydelta extends ActionBarActivity {
                                 rc.setText(format.format(output_divide).toString());
 
                             }}
+                        dialog_custom.dismiss();
                     }
+
                 });
 
             }
@@ -503,7 +509,9 @@ public class Ydelta extends ActionBarActivity {
                             else {
                             rc.setText(format.format(output_divide).toString());
                         }}
+                        dialog_custom.dismiss();
                     }
+
                 });
 
             }
@@ -584,6 +592,7 @@ public class Ydelta extends ActionBarActivity {
                                 rc.setText(format.format(output_divide).toString());
                             }
                         }
+                        dialog_custom.dismiss();
                     }
                 });
 
