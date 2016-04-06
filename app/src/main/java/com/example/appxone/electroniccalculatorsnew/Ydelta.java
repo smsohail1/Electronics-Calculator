@@ -118,18 +118,27 @@ public class Ydelta extends ActionBarActivity {
 
                             output_alphabets = (rb_double_value * rc_double_value) / (ra_double_value + rb_double_value + rc_double_value);
 
-                            r1.setText(format.format(output_alphabets).toString());
-
+                            if (format.format(output_alphabets).toString().charAt(0) == '.') {
+                                r1.setText("0" + format.format(output_alphabets).toString());
+                            } else {
+                                r1.setText(format.format(output_alphabets).toString());
+                            }
 
                             output_alphabets = (ra_double_value * rc_double_value) / (ra_double_value + rb_double_value + rc_double_value);
 
-                            r2.setText(format.format(output_alphabets).toString());
-
+                            if (format.format(output_alphabets).toString().charAt(0) == '.') {
+                                r2.setText("0" + format.format(output_alphabets).toString());
+                            } else {
+                                r2.setText(format.format(output_alphabets).toString());
+                            }
 
                             output_alphabets = (ra_double_value * rb_double_value) / (ra_double_value + rb_double_value + rc_double_value);
 
-                            r3.setText(format.format(output_alphabets).toString());
-
+                            if (format.format(output_alphabets).toString().charAt(0) == '.') {
+                                r3.setText("0" + format.format(output_alphabets).toString());
+                            } else {
+                                r3.setText(format.format(output_alphabets).toString());
+                            }
 //                            r1_value = r1.getText().toString();
 //                            r2_value = r2.getText().toString();
 //                            r3_value = r3.getText().toString();
@@ -193,18 +202,26 @@ public class Ydelta extends ActionBarActivity {
 
                             output_alphabets = (rb_double_value * rc_double_value) / (ra_double_value + rb_double_value + rc_double_value);
 
-                            r1.setText(format.format(output_alphabets).toString());
-
+                            if (format.format(output_alphabets).toString().charAt(0) == '.') {
+                                r1.setText("0" + format.format(output_alphabets).toString());
+                            } else {
+                                r1.setText(format.format(output_alphabets).toString());
+                            }
 
                             output_alphabets = (ra_double_value * rc_double_value) / (ra_double_value + rb_double_value + rc_double_value);
 
-                            r2.setText(format.format(output_alphabets).toString());
-
+                            if (format.format(output_alphabets).toString().charAt(0) == '.') {
+                                r2.setText("0" + format.format(output_alphabets).toString());
+                            } else {
+                                r2.setText(format.format(output_alphabets).toString());
+                            }
 
                             output_alphabets = (ra_double_value * rb_double_value) / (ra_double_value + rb_double_value + rc_double_value);
-
-                            r3.setText(format.format(output_alphabets).toString());
-
+                            if (format.format(output_alphabets).toString().charAt(0) == '.') {
+                                r3.setText("0" + format.format(output_alphabets).toString());
+                            } else {
+                                r3.setText(format.format(output_alphabets).toString());
+                            }
 //                            r1_value = r1.getText().toString();
 //                            r2_value = r2.getText().toString();
 //                            r3_value = r3.getText().toString();
@@ -279,18 +296,25 @@ public class Ydelta extends ActionBarActivity {
 
                             output_alphabets = (rb_double_value * rc_double_value) / (ra_double_value + rb_double_value + rc_double_value);
 
-                            r1.setText(format.format(output_alphabets).toString());
-
+                            if (format.format(output_alphabets).toString().charAt(0) == '.') {
+                                r1.setText("0" + format.format(output_alphabets).toString());
+                            } else {
+                                r1.setText(format.format(output_alphabets).toString());
+                            }
 
                             output_alphabets = (ra_double_value * rc_double_value) / (ra_double_value + rb_double_value + rc_double_value);
-
-                            r2.setText(format.format(output_alphabets).toString());
-
+                            if (format.format(output_alphabets).toString().charAt(0) == '.') {
+                                r2.setText("0" + format.format(output_alphabets).toString());
+                            } else {
+                                r2.setText(format.format(output_alphabets).toString());
+                            }
 
                             output_alphabets = (ra_double_value * rb_double_value) / (ra_double_value + rb_double_value + rc_double_value);
-
-                            r3.setText(format.format(output_alphabets).toString());
-
+                            if (format.format(output_alphabets).toString().charAt(0) == '.') {
+                                r3.setText("0" + format.format(output_alphabets).toString());
+                            } else {
+                                r3.setText(format.format(output_alphabets).toString());
+                            }
 //                            r1_value = r1.getText().toString();
 //                            r2_value = r2.getText().toString();
 //                            r3_value = r3.getText().toString();
@@ -364,21 +388,34 @@ public class Ydelta extends ActionBarActivity {
                             output_divide = (r1_double_value * r2_double_value) + (r2_double_value * r3_double_value) + (r3_double_value * r1_double_value);
                             output_divide = output_divide / r1_double_value;
 
-                            ra.setText(format.format(output_divide).toString());
-
+                            if (format.format(output_divide).toString().charAt(0) == '.') {
+                                ra.setText("0" + format.format(output_divide).toString());
+                            }
+                            else {
+                                ra.setText(format.format(output_divide).toString());
+                            }
                             // rb.setText(format.format(output_divide).toString());
 
                             output_divide = (r1_double_value * r2_double_value) + (r2_double_value * r3_double_value) + (r3_double_value * r1_double_value);
                             output_divide = output_divide / r2_double_value;
 
-                            rb.setText(format.format(output_divide).toString());
-
+                            if (format.format(output_divide).toString().charAt(0) == '.') {
+                                rb.setText("0" + format.format(output_divide).toString());
+                            }
+                            else {
+                                rb.setText(format.format(output_divide).toString());
+                            }
 
                             output_divide = (r1_double_value * r2_double_value) + (r2_double_value * r3_double_value) + (r3_double_value * r1_double_value);
                             output_divide = output_divide / r3_double_value;
 
-                            rc.setText(format.format(output_divide).toString());
-                        }
+                            if (format.format(output_divide).toString().charAt(0) == '.') {
+                                rc.setText("0" + format.format(output_divide).toString());
+                            }
+                            else {
+                                rc.setText(format.format(output_divide).toString());
+
+                            }}
                     }
                 });
 
@@ -439,21 +476,33 @@ public class Ydelta extends ActionBarActivity {
                             output_divide = (r1_double_value * r2_double_value) + (r2_double_value * r3_double_value) + (r3_double_value * r1_double_value);
                             output_divide = output_divide / r1_double_value;
 
-                            ra.setText(format.format(output_divide).toString());
-
+                            if (format.format(output_divide).toString().charAt(0) == '.') {
+                                ra.setText("0" + format.format(output_divide).toString());
+                            }
+                            else {
+                                ra.setText(format.format(output_divide).toString());
+                            }
                             // rb.setText(format.format(output_divide).toString());
 
                             output_divide = (r1_double_value * r2_double_value) + (r2_double_value * r3_double_value) + (r3_double_value * r1_double_value);
                             output_divide = output_divide / r2_double_value;
 
-                            rb.setText(format.format(output_divide).toString());
+                            if (format.format(output_divide).toString().charAt(0) == '.') {
+                                rb.setText("0" + format.format(output_divide).toString());
+                            }
+                            else {
+                                rb.setText(format.format(output_divide).toString());
 
-
+                            }
                             output_divide = (r1_double_value * r2_double_value) + (r2_double_value * r3_double_value) + (r3_double_value * r1_double_value);
                             output_divide = output_divide / r3_double_value;
 
+                            if (format.format(output_divide).toString().charAt(0) == '.') {
+                                rc.setText("0" + format.format(output_divide).toString());
+                            }
+                            else {
                             rc.setText(format.format(output_divide).toString());
-                        }
+                        }}
                     }
                 });
 
@@ -510,20 +559,30 @@ public class Ydelta extends ActionBarActivity {
                             output_divide = (r1_double_value * r2_double_value) + (r2_double_value * r3_double_value) + (r3_double_value * r1_double_value);
                             output_divide = output_divide / r1_double_value;
 
-                            ra.setText(format.format(output_divide).toString());
-
+                            if (format.format(output_divide).toString().charAt(0) == '.') {
+                                ra.setText("0" + format.format(output_divide).toString());
+                            } else {
+                                ra.setText(format.format(output_divide).toString());
+                            }
                             // rb.setText(format.format(output_divide).toString());
 
                             output_divide = (r1_double_value * r2_double_value) + (r2_double_value * r3_double_value) + (r3_double_value * r1_double_value);
                             output_divide = output_divide / r2_double_value;
 
-                            rb.setText(format.format(output_divide).toString());
-
+                            if (format.format(output_divide).toString().charAt(0) == '.') {
+                                rb.setText("0" + format.format(output_divide).toString());
+                            } else {
+                                rb.setText(format.format(output_divide).toString());
+                            }
 
                             output_divide = (r1_double_value * r2_double_value) + (r2_double_value * r3_double_value) + (r3_double_value * r1_double_value);
                             output_divide = output_divide / r3_double_value;
 
-                            rc.setText(format.format(output_divide).toString());
+                            if (format.format(output_divide).toString().charAt(0) == '.') {
+                                rc.setText("0" + format.format(output_divide).toString());
+                            } else {
+                                rc.setText(format.format(output_divide).toString());
+                            }
                         }
                     }
                 });
