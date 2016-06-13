@@ -30,6 +30,7 @@
         android:layout_centerInParent="true">
 
         <RelativeLayout
+            android:layout_marginTop="35dp"
             android:id="@+id/ra_rb_rc"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content">
@@ -101,7 +102,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
                     android:layout_centerVertical="true"
-                    android:src="@drawable/ic_launcher" />
+                    android:src="@drawable/image_transformation" />
 
                 <RelativeLayout
                     android:id="@+id/gain_rel_ra"
@@ -235,7 +236,7 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/ra_rb_rc"
-            android:layout_marginTop="5dp">
+            android:layout_marginTop="10dp">
 
             <RelativeLayout
 
@@ -305,7 +306,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
                     android:layout_centerVertical="true"
-                    android:src="@drawable/ic_launcher" />
+                    android:src="@drawable/image_transformation_" />
 
                 <RelativeLayout
                     android:id="@+id/gain_rel_ra_r3"

@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:textColor="#34495e"
+        android:textSize="25sp"
+        android:layout_marginTop="20dp"
+        android:text="Inductance of Solenoid"
+        />
+    <RelativeLayout
+        android:layout_centerInParent="true"
+        android:gravity="center_horizontal"
+        android:id="@+id/top"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:id="@+id/diameter_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:background="#34495e"
+
+        android:paddingBottom="10dp"
+        android:paddingLeft="25dp"
+        android:paddingRight="25dp"
+        android:paddingTop="10dp">
+
+        <TextView
+
+            android:id="@+id/gAIN_level_diameter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="Diameter"
+            android:textColor="#ffffff"
+
+            />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_below="@+id/gAIN_level_diameter"
+            android:layout_centerInParent="true">
+
+            <TextView
+                android:id="@+id/gain_value_diameter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:text="50"
+
+                android:textColor="#ffffff" />
+
+            <TextView
+                android:id="@+id/diameter_unit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="2dp"
+                android:layout_toRightOf="@+id/gain_value_diameter"
+
+                android:text=" m"
+
+                android:textColor="#ffffff" />
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!--<RelativeLayout-->
+        <!--android:layout_below="@+id/diameter_layout"-->
+        <!--android:id="@+id/height_layout"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginTop="5dp"-->
+        <!--android:background="#34495e"-->
+
+        <!--android:paddingBottom="10dp"-->
+        <!--android:paddingLeft="32dp"-->
+        <!--android:paddingRight="32dp"-->
+        <!--android:paddingTop="10dp">-->
+
+        <!--<TextView-->
+
+            <!--android:id="@+id/gAIN_level_height"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_centerHorizontal="true"-->
+            <!--android:text="Height"-->
+            <!--android:textColor="#ffffff"-->
+
+            <!--/>-->
+
+        <!--<RelativeLayout-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+
+            <!--android:layout_below="@+id/gAIN_level_height"-->
+            <!--android:layout_centerInParent="true">-->
+
+            <!--<TextView-->
+                <!--android:id="@+id/gain_value_height"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+
+                <!--android:text="3"-->
+
+                <!--android:textColor="#ffffff" />-->
+
+            <!--<TextView-->
+                <!--android:id="@+id/height_unit"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginLeft="2dp"-->
+                <!--android:layout_toRightOf="@+id/gain_value_height"-->
+
+                <!--android:text=" m"-->
+
+                <!--android:textColor="#ffffff" />-->
+
+        <!--</RelativeLayout>-->
+    <!--</RelativeLayout>-->
+
+
+
+
+
+
+
+
+
+    <RelativeLayout
+        android:layout_below="@+id/diameter_layout"
+        android:id="@+id/turns_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:background="#34495e"
+
+        android:paddingBottom="10dp"
+        android:paddingLeft="38dp"
+        android:paddingRight="38dp"
+        android:paddingTop="10dp">
+
+        <TextView
+
+            android:id="@+id/gAIN_level_turns"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="turns"
+            android:textColor="#ffffff"
+
+            />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_below="@+id/gAIN_level_turns"
+            android:layout_centerInParent="true">
+
+            <TextView
+                android:id="@+id/gain_value_turns"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:text="3"
+
+                android:textColor="#ffffff" />
+
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <RelativeLayout
+        android:layout_below="@+id/turns_layout"
+        android:id="@+id/relative_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:background="#34495e"
+
+        android:paddingBottom="10dp"
+        android:paddingLeft="25dp"
+        android:paddingRight="25dp"
+        android:paddingTop="10dp">
+
+        <TextView
+
+            android:id="@+id/gAIN_level_relative"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="u relative"
+            android:textColor="#ffffff"
+
+            />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_below="@+id/gAIN_level_relative"
+            android:layout_centerInParent="true">
+
+            <TextView
+                android:id="@+id/gain_value_relative"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:text="36.476"
+
+                android:textColor="#ffffff" />
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+
+
+
+
+
+
+
+
+
+
+    <RelativeLayout
+        android:layout_below="@+id/relative_layout"
+        android:id="@+id/length_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:background="#34495e"
+
+        android:paddingBottom="10dp"
+        android:paddingLeft="41dp"
+        android:paddingRight="41dp"
+        android:paddingTop="10dp">
+
+        <TextView
+
+            android:id="@+id/gAIN_level_length"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="L"
+            android:textColor="#ffffff"
+
+            />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_below="@+id/gAIN_level_length"
+            android:layout_centerInParent="true">
+
+            <TextView
+                android:id="@+id/gain_value_length"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:text="3"
+
+                android:textColor="#ffffff" />
+
+
+            <TextView
+                android:id="@+id/length_unit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="2dp"
+                android:layout_toRightOf="@+id/gain_value_length"
+
+                android:text=" H"
+
+                android:textColor="#ffffff" />
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+
+
+
+
+
+
+    </RelativeLayout>
+
+<RelativeLayout
+    android:layout_marginTop="10dp"
+    android:gravity="center_horizontal"
+    android:layout_below="@+id/top"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content">
+<TextView
+    android:id="@+id/area_head"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Area = "
+
+    android:textColor="#000000"
+    />
+    <TextView
+        android:id="@+id/area_value"
+        android:layout_toRightOf="@+id/area_head"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="32"
+        android:textColor="#000000"
+        />
+
+<TextView
+    android:layout_toRightOf="@+id/area_value"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text=" m2"
+    android:textColor="#000000"
+
+    />
+</RelativeLayout>
+
+
+
+
+
+</RelativeLayout>

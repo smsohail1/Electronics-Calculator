@@ -23,173 +23,365 @@
     </RelativeLayout>
 
     <RelativeLayout
-        android:layout_centerInParent="true"
-
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content">
-    <RelativeLayout
 
-
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content">
-    <RelativeLayout
-        android:id="@+id/input_values"
-        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-
-        android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp"
-        android:layout_marginTop="10dp">
-
-        <Button
-            android:id="@+id/volt_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_centerVertical="true"
-
-
-            android:text="5" />
-
-        <ImageView
-
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:layout_centerVertical="true"
-            android:src="@drawable/ic_launcher" />
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_marginRight="5dp"
-            android:orientation="vertical">
-
-            <Button
-
-                android:id="@+id/resisitor_button1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-
-
-                android:text="2" />
-
-            <Button
-                android:id="@+id/capacitor_button1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-
-
-                android:text="8" />
-        </LinearLayout>
-    </RelativeLayout>
-
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/input_values"
-        android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp"
-        android:orientation="vertical">
-
-        <TextView
-            android:layout_width="fill_parent"
-
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-
-            android:text="The maximam current and charge of the circuit will be:" />
-
-        <TextView
-            android:id="@+id/current_max"
-            android:layout_width="fill_parent"
-
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:text="dsd" />
-
-        <!--<TextView-->
-            <!--android:id="@+id/charge_max"-->
-
-            <!--android:layout_width="fill_parent"-->
-
-            <!--android:layout_height="wrap_content"-->
-            <!--android:layout_marginTop="5dp"-->
-            <!--android:text="dsd" />-->
-
-        <TextView
-            android:layout_width="fill_parent"
-
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:text="Calculate the current and the charge at time t=" />
-
-        <LinearLayout
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:gravity="center_horizontal"
-            android:orientation="horizontal">
-
-            <Button
-                android:id="@+id/current_time_button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="1.6"
-
-                />
-
-
-        </LinearLayout>
+        android:layout_centerInParent="true">
 
         <RelativeLayout
 
+
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
+            android:layout_height="wrap_content">
 
-            android:layout_marginRight="5dp"
-            android:layout_marginTop="5dp">
-<TextView
-android:id="@+id/curnt"
+            <RelativeLayout
+                android:id="@+id/input_values"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="10dp">
+
+
+                <RelativeLayout
+                    android:id="@+id/gain_rel_rb_volt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:background="#34495e"
+                    android:paddingBottom="10dp"
+                    android:paddingLeft="25dp"
+                    android:paddingRight="25dp"
+                    android:paddingTop="10dp">
+
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:layout_below="@+id/gAIN_level_text"
+                        android:layout_centerInParent="true">
+
+                        <TextView
+                            android:id="@+id/volt_button"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+
+                            android:text="85"
+
+                            android:textColor="#ffffff" />
+
+                        <TextView
+                            android:id="@+id/fre_unit"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="2dp"
+                            android:layout_toRightOf="@+id/volt_button"
+
+                            android:text=" V"
+
+                            android:textColor="#ffffff" />
+
+                    </RelativeLayout>
+
+
+                </RelativeLayout>
+
+                <ImageView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/image_capacitor_charge" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+
+                    android:layout_marginRight="5dp"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:id="@+id/gain_rel_r2_resistor"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:layout_centerVertical="true"
+                        android:background="#34495e"
+                        android:paddingBottom="10dp"
+                        android:paddingLeft="25dp"
+                        android:paddingRight="25dp"
+                        android:paddingTop="10dp">
+
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+
+                            android:layout_below="@+id/gAIN_level_text"
+                            android:layout_centerInParent="true">
+
+                            <TextView
+                                android:id="@+id/resisitor_button1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+
+                                android:text="44"
+
+                                android:textColor="#ffffff" />
+
+                            <TextView
+                                android:id="@+id/resistor_unit"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="2dp"
+                                android:layout_toRightOf="@+id/resisitor_button1"
+
+                                android:text=" Ω"
+
+                                android:textColor="#ffffff" />
+
+                        </RelativeLayout>
+
+
+                    </RelativeLayout>
+
+
+                    <RelativeLayout
+                        android:id="@+id/gain_rel_r3_charge"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+
+                        android:layout_marginTop="5dp"
+                        android:background="#34495e"
+                        android:paddingBottom="10dp"
+                        android:paddingLeft="25dp"
+                        android:paddingRight="25dp"
+                        android:paddingTop="10dp">
+
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+
+                            android:layout_below="@+id/gAIN_level_text"
+                            android:layout_centerInParent="true">
+
+                            <TextView
+                                android:id="@+id/capacitor_button1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+
+                                android:text="8"
+
+                                android:textColor="#ffffff" />
+
+                            <TextView
+                                android:id="@+id/capacitor_unit"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="2dp"
+                                android:layout_toRightOf="@+id/capacitor_button1"
+
+                                android:text=" F"
+
+                                android:textColor="#ffffff" />
+
+                        </RelativeLayout>
+
+
+                    </RelativeLayout>
+
+
+                </LinearLayout>
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/input_values"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="5dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="fill_parent"
+
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+
+                    android:text="The maximam current and charge of the circuit will be:" />
+
+                <TextView
+                    android:id="@+id/current_max"
+                    android:layout_width="fill_parent"
+
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="dsd" />
+
+                <!--<TextView-->
+                <!--android:id="@+id/charge_max"-->
+
+                <!--android:layout_width="fill_parent"-->
+
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginTop="5dp"-->
+                <!--android:text="dsd" />-->
+
+                <TextView
+                    android:layout_width="fill_parent"
+
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="Calculate the current and the charge at time t=" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:gravity="center_horizontal"
+                    android:orientation="horizontal">
+
+                    <RelativeLayout
+                        android:id="@+id/gain_rel_r4_sec"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dp"
+                        android:background="#34495e"
+                        android:paddingBottom="10dp"
+                        android:paddingLeft="25dp"
+                        android:paddingRight="25dp"
+                        android:paddingTop="10dp">
+
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+
+                            android:layout_below="@+id/gAIN_level_text"
+                            android:layout_centerInParent="true">
+
+                            <TextView
+                                android:id="@+id/current_time_button"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+
+                                android:text="1.6"
+
+                                android:textColor="#ffffff" />
+
+                            <TextView
+                                android:id="@+id/current_time_unit"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="2dp"
+                                android:layout_toRightOf="@+id/current_time_button"
+
+                                android:text=" s"
+
+                                android:textColor="#ffffff" />
+
+                        </RelativeLayout>
+
+
+                    </RelativeLayout>
+
+                    <!--<Button-->
+                    <!--android:id="@+id/current_time_button"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:text="1.6"-->
+                    <!--android:background="#34495e"-->
+                    <!--android:textColor="#ffffff"-->
+
+                    <!--/>-->
+
+
+                </LinearLayout>
+
+                <RelativeLayout
+
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="5dp">
+
+                    <TextView
+                        android:id="@+id/curnt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="I = " />
+
+                    <RelativeLayout
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@+id/curnt">
+
+                        <TextView
+                            android:id="@+id/current_at_time"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+
+
+                            android:text="1.93" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toRightOf="@+id/current_at_time"
+                            android:text=" A" />
+
+                    </RelativeLayout>
+<RelativeLayout
+    android:layout_alignParentRight="true"
     android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="I = "
-    />
-            <TextView
-                android:layout_toRightOf="@+id/curnt"
-                android:id="@+id/current_at_time"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_toLeftOf="@+id/right"
+                        android:id="@+id/charge"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:text="C = " />
+<RelativeLayout
+    android:id="@+id/right"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+                    <TextView
+
+                        android:id="@+id/charge_at_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
 
 
+                        android:text="3.08" />
 
-                android:text="R" />
-
-            <TextView
-                android:layout_toLeftOf="@+id/charge_at_time"
-                android:id="@+id/charge"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="C = "
-                />
-            <TextView
-
-                android:layout_alignParentRight="true"
-                android:id="@+id/charge_at_time"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-
-
-
-                android:text="C" />
-
-
-        </RelativeLayout>
-    </LinearLayout>
-    </RelativeLayout>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@+id/charge_at_time"
+                        android:text=" C" />
 </RelativeLayout>
+</RelativeLayout>
+                </RelativeLayout>
+            </LinearLayout>
+        </RelativeLayout>
+    </RelativeLayout>
 
     <LinearLayout
         android:id="@+id/adLayout"

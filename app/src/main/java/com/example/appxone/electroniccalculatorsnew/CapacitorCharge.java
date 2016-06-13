@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -23,7 +24,7 @@ import java.text.DecimalFormat;
  */
 public class CapacitorCharge extends AppCompatActivity {
 
-    Button volt_button, resistor_button, capacitor_button, current_time_button;
+    TextView volt_button, resistor_button, capacitor_button, current_time_button;
     TextView current_max, charge_max, current_time_max, charge_time_max;
     TextView dialog_edidtext, dialog_header;
     Button diaog_cancel_button, dialog_ok_button;
@@ -31,20 +32,22 @@ public class CapacitorCharge extends AppCompatActivity {
     Dialog dialog_custom;
     String publishteId, ad_Id;
     String volt_value, resistor_value, chapacitor_value, current_time_value;
-
+    public static TextView unit_convertion;
     Double resisitor_doublle, volt_double, capacitor_double, current_time_value_double;
-
+    Toast t3;
     DecimalFormat format;
     Toast t1, t2;
     String s1, s2, s3;
     Double time_zero, product, product_current, ratio, rat, charge_given_time, minus, time_given, exp_given_time, current_result_given;
 
+    RelativeLayout volt_layout,resisitor_layout,capacitor_layout,time_layout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.capacitorchargelayout);
 
         getSupportActionBar().hide();
+        t3 = Toast.makeText(CapacitorCharge.this, "Invalid Digit", Toast.LENGTH_SHORT);
 
         publishteId = "ca-app-pub-9381472359687969/2648882536";
         AdView mAdView = new AdView(getApplicationContext(), null);
@@ -73,13 +76,26 @@ public class CapacitorCharge extends AppCompatActivity {
 
         // format=new DecimalFormat(".00");
 
-        volt_button = (Button) findViewById(R.id.volt_button);
+        volt_layout= (RelativeLayout) findViewById(R.id.gain_rel_rb_volt);
 
-        resistor_button = (Button) findViewById(R.id.resisitor_button1);
+        resisitor_layout= (RelativeLayout) findViewById(R.id.gain_rel_r2_resistor);
 
-        capacitor_button = (Button) findViewById(R.id.capacitor_button1);
+        capacitor_layout= (RelativeLayout) findViewById(R.id.gain_rel_r3_charge);
 
-        current_time_button = (Button) findViewById(R.id.current_time_button);
+        time_layout= (RelativeLayout) findViewById(R.id.gain_rel_r4_sec);
+
+
+
+        volt_button = (TextView) findViewById(R.id.volt_button);
+
+        resistor_button = (TextView) findViewById(R.id.resisitor_button1);
+
+        capacitor_button = (TextView) findViewById(R.id.capacitor_button1);
+
+        current_time_button = (TextView) findViewById(R.id.current_time_button);
+
+
+
         current_time_max = (TextView) findViewById(R.id.current_at_time);
         charge_time_max = (TextView) findViewById(R.id.charge_at_time);
         current_max = (TextView) findViewById(R.id.current_max);
@@ -95,6 +111,8 @@ public class CapacitorCharge extends AppCompatActivity {
         dialog_header = (TextView) view.findViewById(R.id.header);
         dialog_edidtext = (TextView) view.findViewById(R.id.editText);
 
+        unit_convertion = (TextView) view.findViewById(R.id.unit_conversion);
+
 //        dialog_edidtext.setFocusableInTouchMode(true);
 //        dialog_edidtext.setFocusable(true);
 //        dialog_edidtext.requestFocus();
@@ -107,9 +125,10 @@ public class CapacitorCharge extends AppCompatActivity {
         dialog_custom.setCancelable(true);
         dialog_custom.setContentView(view);
 
-        volt_button.setOnClickListener(new View.OnClickListener() {
+        volt_layout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                unit_convertion.setText("V");
                 dialog_header.setText("Insert the value of V");
                 dialog_custom.show();
                 diaog_cancel_button.setOnClickListener(new View.OnClickListener() {
@@ -135,8 +154,22 @@ public class CapacitorCharge extends AppCompatActivity {
                             volt_button.setText(volt_value.toString());
                         }
 
+                        volt_value = dialog_edidtext.getText().toString();
 
-                        if (volt_value.equalsIgnoreCase("0")) {
+                       int check = 0;
+                        for (int i = 0; i < volt_value.length(); i++) {
+                            if (volt_value.charAt(i) == '.') {
+                                check++;
+                            }
+                        }
+                        if (volt_value.equalsIgnoreCase("")) {
+                            t3.show();
+                        } else if (check > 1) {
+                            t3.show();
+                        } else if (volt_value.equalsIgnoreCase(".")) {
+                            t3.show();
+                        }
+                       else if (volt_value.equalsIgnoreCase("0")) {
                             t1 = Toast.makeText(CapacitorCharge.this, "V must be > 0", Toast.LENGTH_SHORT);
                             t1.show();
                         } else if (volt_value.equalsIgnoreCase("")) {
@@ -203,9 +236,10 @@ public class CapacitorCharge extends AppCompatActivity {
             }
         });
 
-        capacitor_button.setOnClickListener(new View.OnClickListener() {
+        capacitor_layout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                unit_convertion.setText("F");
                 dialog_header.setText("Insert the value of C");
                 dialog_custom.show();
                 diaog_cancel_button.setOnClickListener(new View.OnClickListener() {
@@ -234,7 +268,22 @@ public class CapacitorCharge extends AppCompatActivity {
 
                         // capacitor_button.setText(chapacitor_value.toString());
 
-                        if (chapacitor_value.equalsIgnoreCase("0")) {
+                        chapacitor_value = dialog_edidtext.getText().toString();
+
+                        int check = 0;
+                        for (int i = 0; i < chapacitor_value.length(); i++) {
+                            if (chapacitor_value.charAt(i) == '.') {
+                                check++;
+                            }
+                        }
+                        if (chapacitor_value.equalsIgnoreCase("")) {
+                            t3.show();
+                        } else if (check > 1) {
+                            t3.show();
+                        } else if (chapacitor_value.equalsIgnoreCase(".")) {
+                            t3.show();
+                        }
+                       else if (chapacitor_value.equalsIgnoreCase("0")) {
                             t1 = Toast.makeText(CapacitorCharge.this, "C must be > 0", Toast.LENGTH_SHORT);
                             t1.show();
                         } else if (chapacitor_value.equalsIgnoreCase("")) {
@@ -307,9 +356,10 @@ public class CapacitorCharge extends AppCompatActivity {
         });
 
 
-        resistor_button.setOnClickListener(new View.OnClickListener() {
+        resisitor_layout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                unit_convertion.setText("Ω");
                 dialog_header.setText("Insert the value of R");
                 dialog_custom.show();
                 diaog_cancel_button.setOnClickListener(new View.OnClickListener() {
@@ -338,8 +388,22 @@ public class CapacitorCharge extends AppCompatActivity {
 
 
                         //capacitor_button.setText(chapacitor_value.toString());
+                        resistor_value = dialog_edidtext.getText().toString();
 
-                        if (resistor_value.equalsIgnoreCase("0")) {
+                        int check = 0;
+                        for (int i = 0; i < resistor_value.length(); i++) {
+                            if (resistor_value.charAt(i) == '.') {
+                                check++;
+                            }
+                        }
+                        if (resistor_value.equalsIgnoreCase("")) {
+                            t3.show();
+                        } else if (check > 1) {
+                            t3.show();
+                        } else if (resistor_value.equalsIgnoreCase(".")) {
+                            t3.show();
+                        }
+                       else if (resistor_value.equalsIgnoreCase("0")) {
                             t1 = Toast.makeText(CapacitorCharge.this, "R must be > 0", Toast.LENGTH_SHORT);
                             t1.show();
                         } else if (resistor_value.equalsIgnoreCase("")) {
@@ -434,9 +498,10 @@ public class CapacitorCharge extends AppCompatActivity {
                 });
             }
         });
-        current_time_button.setOnClickListener(new View.OnClickListener() {
+        time_layout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                unit_convertion.setText("t");
                 dialog_header.setText("Insert the value of I");
                 dialog_custom.show();
                 diaog_cancel_button.setOnClickListener(new View.OnClickListener() {
@@ -466,7 +531,22 @@ public class CapacitorCharge extends AppCompatActivity {
 
                         //capacitor_button.setText(chapacitor_value.toString());
 
-                        if (current_time_value.equalsIgnoreCase("0")) {
+                        current_time_value = dialog_edidtext.getText().toString();
+
+                        int check = 0;
+                        for (int i = 0; i < current_time_value.length(); i++) {
+                            if (current_time_value.charAt(i) == '.') {
+                                check++;
+                            }
+                        }
+                        if (current_time_value.equalsIgnoreCase("")) {
+                            t3.show();
+                        } else if (check > 1) {
+                            t3.show();
+                        } else if (current_time_value.equalsIgnoreCase(".")) {
+                            t3.show();
+                        }
+                       else if (current_time_value.equalsIgnoreCase("0")) {
                             t1 = Toast.makeText(CapacitorCharge.this, "I must be > 0", Toast.LENGTH_SHORT);
                             t1.show();
                         } else if (current_time_value.equalsIgnoreCase("")) {

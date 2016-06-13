@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+
+
+        android:id="@+id/header_power"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/header_bg">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="5dp"
+            android:text="Frequency Converter"
+            android:textColor="#ffffff"
+            android:textSize="25sp" />
+
+    </RelativeLayout>
+
+    <TextView
+
+        android:id="@+id/desc_power"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/combine"
+        android:layout_margin="5dp"
+        android:text="Calculate maximam power dissipation,or thermal resistivity, or temperature."
+        android:textColor="#000000" />
+
+<RelativeLayout
+    android:layout_centerInParent="true"
+android:id="@+id/combine"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content">
+    <RelativeLayout
+        android:id="@+id/power_rth"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+
+        android:gravity="center">
+
+        <RelativeLayout
+
+            android:id="@+id/gain_rel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:background="#34495e"
+
+            android:paddingBottom="10dp"
+            android:paddingLeft="25dp"
+            android:paddingRight="25dp"
+            android:paddingTop="10dp">
+
+            <TextView
+
+                android:id="@+id/gAIN_level_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="Power"
+                android:textColor="#ffffff"
+
+                />
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_below="@+id/gAIN_level_text"
+                android:layout_centerInParent="true">
+
+                <TextView
+                    android:id="@+id/gain_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:text="5"
+
+                    android:textColor="#ffffff" />
+
+                <TextView
+                    android:id="@+id/fre_unit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="2dp"
+                    android:layout_toRightOf="@+id/gain_value"
+
+                    android:text=" W"
+
+                    android:textColor="#ffffff" />
+
+            </RelativeLayout>
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/gain_rel_rth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="5dp"
+            android:layout_toRightOf="@+id/gain_rel"
+            android:background="#34495e"
+
+            android:paddingBottom="10dp"
+            android:paddingLeft="25dp"
+            android:paddingRight="25dp"
+            android:paddingTop="10dp">
+
+            <TextView
+
+                android:id="@+id/gAIN_level_text_rth"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="Rth(j-a)"
+                android:textColor="#ffffff"
+
+                />
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_below="@+id/gAIN_level_text_rth"
+                android:layout_centerInParent="true">
+
+                <TextView
+                    android:id="@+id/gain_value_rth"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:text="2"
+
+                    android:textColor="#ffffff" />
+
+                <TextView
+                    android:id="@+id/fre_unit_rth"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="2dp"
+                    android:layout_toRightOf="@+id/gain_value_rth"
+
+                    android:text=" °C/W"
+
+                    android:textColor="#ffffff" />
+
+            </RelativeLayout>
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/gain_rel_ambient"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/power_rth"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="10dp"
+        android:background="#34495e"
+
+        android:paddingBottom="10dp"
+        android:paddingLeft="25dp"
+        android:paddingRight="25dp"
+        android:paddingTop="10dp">
+
+        <TextView
+
+            android:id="@+id/gAIN_level_text_ambient"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="ambient"
+            android:textColor="#ffffff"
+
+            />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_below="@+id/gAIN_level_text_ambient"
+            android:layout_centerInParent="true">
+
+            <TextView
+                android:id="@+id/gain_value_ambient"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:text="65"
+
+                android:textColor="#ffffff" />
+
+            <TextView
+                android:id="@+id/fre_unit_ambient"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="2dp"
+                android:layout_toRightOf="@+id/gain_value_ambient"
+
+                android:text=" °C"
+
+                android:textColor="#ffffff" />
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_centerInParent="true"
+        android:id="@+id/gain_rel_junction"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/gain_rel_ambient"
+        android:layout_marginTop="10dp"
+        android:background="#34495e"
+
+        android:paddingBottom="10dp"
+        android:paddingLeft="25dp"
+        android:paddingRight="25dp"
+        android:paddingTop="10dp">
+
+        <TextView
+
+            android:id="@+id/gAIN_level_text_junction"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="junction"
+            android:textColor="#ffffff"
+
+            />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_below="@+id/gAIN_level_text_junction"
+            android:layout_centerInParent="true">
+
+            <TextView
+                android:id="@+id/gain_value_junction"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:text="245"
+
+                android:textColor="#ffffff" />
+
+            <TextView
+                android:id="@+id/fre_unit_junction"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="2dp"
+                android:layout_toRightOf="@+id/gain_value_junction"
+
+                android:text=" °C"
+
+                android:textColor="#ffffff" />
+
+        </RelativeLayout>
+    </RelativeLayout>
+</RelativeLayout>
+
+</RelativeLayout>

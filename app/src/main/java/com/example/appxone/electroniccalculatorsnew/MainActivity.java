@@ -76,6 +76,8 @@ public class MainActivity extends AppCompatActivity {
        // Listview_Selection.put(3, OhmsLaw.class);
         Listview_Selection.put(5, ResistorserialParallel.class);
         Listview_Selection.put(6, Frequencyconverter.class);
+        Listview_Selection.put(7, InductorDesign.class);
+
 
         calculatormodel = new ArrayList<CalculatorModel>();
 
@@ -97,13 +99,13 @@ public class MainActivity extends AppCompatActivity {
 //        calculatormodel.add(new CalculatorModel(R.drawable.icon_ne555_calculator, "NE555 Calculator"));
 //        calculatormodel.add(new CalculatorModel(R.drawable.icon_power_dissipation, "Power dissipation"));
 //        calculatormodel.add(new CalculatorModel(R.drawable.icon_battery_life_calculator, "Battery Life calculator"));
-//        calculatormodel.add(new CalculatorModel(R.drawable.icon_inductor_design_tool, "Inductor Design Tool"));
+calculatormodel.add(new CalculatorModel(R.drawable.icon_frequency_converter, "Frequency Converter"));
+       calculatormodel.add(new CalculatorModel(R.drawable.icon_inductor_design_tool, "Inductor Design Tool"));
 //        calculatormodel.add(new CalculatorModel(R.drawable.icon_voltage_drop_calculator, "Voltage Drop Calculator"));
 //        calculatormodel.add(new CalculatorModel(R.drawable.icon_pcb_trace_with_calculator, "PCB Trace Width  Calculator"));
 //        calculatormodel.add(new CalculatorModel(R.drawable.icon_power_calculator, "Power Calculator"));
-//        calculatormodel.add(new CalculatorModel(R.drawable.icon_transformation, "Y- Transformation"));
       //  calculatormodel.add(new CalculatorModel(R.drawable.icon_descible_converter, "Decibel Converter"));
-        calculatormodel.add(new CalculatorModel(R.drawable.icon_frequency_converter, "Frequency Converter"));
+
 //        calculatormodel.add(new CalculatorModel(R.drawable.icon_analog_digital_converter, "Analog-Digital Converter"));
         calculator_List = (ListView) findViewById(R.id.list_calculator);
         calculator_adapter = new CalculatorsAdapter(getApplicationContext(), calculatormodel);

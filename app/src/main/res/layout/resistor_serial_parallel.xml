@@ -23,34 +23,49 @@
 
     <RelativeLayout
 
-        android:layout_centerInParent="true"
         android:layout_width="fill_parent"
-
         android:layout_height="wrap_content"
+
+        android:layout_centerInParent="true"
 
         >
 
         <RelativeLayout
+            android:id="@+id/serial_image"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
             android:layout_marginLeft="10dp">
 
-            <!--<ImageView-->
+            <ImageView
 
-                <!--android:id="@+id/series_img"-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:src="@drawable/ic_launcher" />-->
+                android:id="@+id/series_img"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/image_resistor_series_parelle" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="3dp"
+
+            android:layout_toRightOf="@+id/serial_image">
+
 
             <Button
                 android:id="@+id/R1_serial"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
-                android:text="3.6" />
+                android:background="#34495e"
+                android:text="3.6"
+                android:textColor="#ffffff" />
 
-
+            <!--<ImageView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:src="@drawable/image_resistor_series_parelle" />-->
             <Button
                 android:id="@+id/R2_serial"
                 android:layout_width="wrap_content"
@@ -58,7 +73,9 @@
                 android:layout_below="@+id/R1_serial"
                 android:layout_marginLeft="5dp"
                 android:layout_marginTop="10dp"
-                android:text="3.9" />
+                android:background="#34495e"
+                android:text="3.9"
+                android:textColor="#ffffff" />
 
 
             <RelativeLayout
@@ -68,6 +85,7 @@
                 android:layout_centerInParent="true">
 
                 <TextView
+
                     android:id="@+id/total"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -80,6 +98,7 @@
                     android:layout_marginLeft="5dp"
                     android:layout_toRightOf="@+id/total"
                     android:text="7.5" />
+
                 <TextView
                     android:id="@+id/unit_serial"
                     android:layout_width="wrap_content"
@@ -101,29 +120,36 @@
                 android:id="@+id/R1_parallel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:background="#34495e"
+                android:text="3.6"
 
 
-                android:text="3.6" />
+                android:textColor="#ffffff" />
 
-            <!--<ImageView-->
-                <!--android:id="@+id/parallel_img"-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:layout_below="@+id/R1_parallel"-->
-                <!--android:layout_centerHorizontal="true"-->
-                <!--android:src="@drawable/ic_launcher" />-->
+            <ImageView
+                android:id="@+id/parallel_img"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/R1_parallel"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="2dp"
+                android:src="@drawable/image_resistor_series_parelle_two" />
+
 
             <Button
                 android:id="@+id/R2_parallel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/R1_parallel"
+                android:layout_below="@+id/parallel_img"
+                android:layout_marginTop="2dp"
+                android:background="#34495e"
+                android:text="3.9"
 
-
-                android:text="3.9" />
+                android:textColor="#ffffff" />
 
 
             <RelativeLayout
+
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/R2_parallel"
@@ -141,6 +167,7 @@
                     android:layout_height="wrap_content"
                     android:layout_toRightOf="@+id/total_parallel"
                     android:text="7.5" />
+
                 <TextView
                     android:id="@+id/unit"
                     android:layout_width="wrap_content"
